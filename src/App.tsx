@@ -53,7 +53,9 @@ table {
 body{
   font-family: 'Source Sans Pro', sans-serif;
   background-color: ${({ theme }) => theme.bgColor};
-  color: ${({ theme }) => theme.textColor}
+  color: ${({ theme }) => theme.textColor};
+  margin: 0 auto;
+  max-width: 150vh;
 }
 a {
   text-decoration: none;
