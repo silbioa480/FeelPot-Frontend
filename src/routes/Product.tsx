@@ -22,8 +22,8 @@ function Product() {
           <Figure.Image
             width={"95%"}
             height={"auto"}
-            alt={product?.image}
-            src={require(`../img/${product?.image}`)}
+            alt={product.image}
+            src={require(`../img/${product.image}`)}
           />
           <Figure.Caption
             style={{
@@ -34,7 +34,7 @@ function Product() {
               color: "#D67158",
             }}
           >
-            {product?.name}
+            {product.name}
           </Figure.Caption>
           <Figure.Caption
             style={{
@@ -45,11 +45,20 @@ function Product() {
               color: "#148BA0",
             }}
           >
-            {product?.description}
+            {product.description}
           </Figure.Caption>
         </Figure>
       ) : (
-        <Spinner animation="grow" variant="success" />
+        <Spinner
+          animation="grow"
+          variant="success"
+          style={{
+            display: "block",
+            margin: "0 auto",
+            width: "auto",
+            height: "auto",
+          }}
+        />
       )}
     </>
   );

@@ -72,7 +72,16 @@ function Home() {
       <div style={{ height: "50px" }}></div>
       <Row xs={2} md={4} className="g-4" style={{ margin: "0 auto" }}>
         {isLoading ? (
-          <Spinner animation="grow" variant="success" />
+          <Spinner
+            animation="grow"
+            variant="success"
+            style={{
+              display: "block",
+              margin: "0 auto",
+              width: "auto",
+              height: "auto",
+            }}
+          />
         ) : (
           data?.map((product) => (
             <Col key={product.index} style={{ height: "380px" }}>
