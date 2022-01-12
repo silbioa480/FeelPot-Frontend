@@ -1,5 +1,9 @@
 function Footer() {
-  return <h1>Footer</h1>;
+  return (
+    <div style={{ height: "5vh", display: "flex", alignItems: "center" }}>
+      <p>Provided By JH.</p>
+    </div>
+  );
 }
 
 export default Footer;

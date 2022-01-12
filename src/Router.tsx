@@ -6,7 +6,6 @@ import Footer from "./views/Footer";
 import Home from "./routes/Home";
 import LogIn from "./routes/LogIn";
 import SignUp from "./routes/SignUp";
-import { Container } from "react-bootstrap";
 
 function Router() {
   return (
@@ -16,13 +15,13 @@ function Router() {
       <Section>
         <Switch>
           <Route path="/logIn">
-            <LogIn></LogIn>
+            <LogIn />
           </Route>
           <Route path="/signUp">
-            <SignUp></SignUp>
+            <SignUp />
           </Route>
           <Route path="/">
-            <Home></Home>
+            <Home />
           </Route>
         </Switch>
       </Section>

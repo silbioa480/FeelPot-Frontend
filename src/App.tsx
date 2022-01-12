@@ -59,7 +59,11 @@ body{
 }
 a {
   text-decoration: none;
-  color: inherit;
+  transition: color 0.3s ease-in;
+  color: ${({ theme }) => theme.textColor};
+  &:hover{
+    color: #00C8A1;
+  }
 }
 `;
 

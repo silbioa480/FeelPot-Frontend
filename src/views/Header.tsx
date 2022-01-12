@@ -11,7 +11,7 @@ function Header() {
       <Carousel.Item>
         <Img
           className="d-block w-100"
-          src={require("../img/pot-1.jpg")}
+          src={require("../img/pot-(1).jpg")}
           alt="First slide"
         />
         <Carousel.Caption>
@@ -22,7 +22,7 @@ function Header() {
       <Carousel.Item>
         <Img
           className="d-block w-100"
-          src={require("../img/pot-18.jpg")}
+          src={require("../img/pot-(18).jpg")}
           alt="Second slide"
         />
 
@@ -34,7 +34,7 @@ function Header() {
       <Carousel.Item>
         <Img
           className="d-block w-100"
-          src={require("../img/pot-30.jpg")}
+          src={require("../img/pot-(30).jpg")}
           alt="Third slide"
         />
 
@@ -48,7 +48,7 @@ function Header() {
       <Carousel.Item>
         <Img
           className="d-block w-100"
-          src={require("../img/pot-17.jpg")}
+          src={require("../img/pot-(17).jpg")}
           alt="Third slide"
         />
 
@@ -62,7 +62,7 @@ function Header() {
       <Carousel.Item>
         <Img
           className="d-block w-100"
-          src={require("../img/pot-21.jpg")}
+          src={require("../img/pot-(21).jpg")}
           alt="Third slide"
         />
 
