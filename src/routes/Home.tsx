@@ -32,7 +32,7 @@ const RowForm = styled(Row)`
   }
   @media (orientation: portrait) {
     grid-template-columns: 1fr 1fr;
-    column-gap: 5rem;
+    column-gap: 2rem;
   }
 `;
 interface IProduct {
@@ -125,10 +125,11 @@ function Home() {
                       style={{
                         height: "50px",
                         textAlign: "start",
+                        overflow: "hidden",
                       }}
                     >
-                      {product.description.length > 50
-                        ? product.description.slice(0, 50) + "..."
+                      {product.description.length > 60
+                        ? product.description.slice(0, 60) + "..."
                         : product.description}
                     </Card.Text>
                   </Card.Body>
