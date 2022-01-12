@@ -118,7 +118,9 @@ function Home() {
                     }}
                   />
                   <Card.Body>
-                    <Card.Title style={{ textAlign: "center" }}>
+                    <Card.Title
+                      style={{ textAlign: "center", whiteSpace: "nowrap" }}
+                    >
                       {product.name}
                     </Card.Title>
                     <Card.Text
