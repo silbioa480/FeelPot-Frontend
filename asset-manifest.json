@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/feel-pot-shopping-web/static/css/main.434d85ca.css",
-    "main.js": "/feel-pot-shopping-web/static/js/main.b5e2d2ea.js",
-    "static/media/pot-(1).jpg": "/feel-pot-shopping-web/static/media/pot-(1).3e4cd8172db8ecadda42.jpg",
+    "main.js": "/feel-pot-shopping-web/static/js/main.c5271678.js",
+    "static/media/pot-(31).jpg": "/feel-pot-shopping-web/static/media/pot-(31).3e4cd8172db8ecadda42.jpg",
     "static/media/pot-(11).jpg": "/feel-pot-shopping-web/static/media/pot-(11).e35453cd7a602fc2a7dd.jpg",
     "static/media/pot-(10).jpg": "/feel-pot-shopping-web/static/media/pot-(10).dedfd0c1cc5e1e96e862.jpg",
     "static/media/pot-(22).jpg": "/feel-pot-shopping-web/static/media/pot-(22).59f5706bf20f81606bb2.jpg",
@@ -15,29 +15,35 @@
     "static/media/pot-(7).jpg": "/feel-pot-shopping-web/static/media/pot-(7).4ee18165f663d7c0f6f3.jpg",
     "static/media/pot-(20).jpg": "/feel-pot-shopping-web/static/media/pot-(20).31e68e4495533b2830a0.jpg",
     "static/media/pot-(23).jpg": "/feel-pot-shopping-web/static/media/pot-(23).c3ac08f0ba369bc38117.jpg",
-    "static/media/pot-(2).jpg": "/feel-pot-shopping-web/static/media/pot-(2).fd4c6c43484d378de74f.jpg",
+    "static/media/pot-(32).jpg": "/feel-pot-shopping-web/static/media/pot-(32).fd4c6c43484d378de74f.jpg",
     "static/media/pot-(8).jpg": "/feel-pot-shopping-web/static/media/pot-(8).bb217781b676a07655f2.jpg",
     "static/media/pot-(5).jpg": "/feel-pot-shopping-web/static/media/pot-(5).c3465a07190c77694cd2.jpg",
-    "static/media/pot-(3).jpg": "/feel-pot-shopping-web/static/media/pot-(3).b1ef9648aa1e93e4e767.jpg",
+    "static/media/pot-(33).jpg": "/feel-pot-shopping-web/static/media/pot-(33).b1ef9648aa1e93e4e767.jpg",
     "static/media/pot-(6).jpg": "/feel-pot-shopping-web/static/media/pot-(6).ae8bd79f9de132372be9.jpg",
-    "static/media/pot-(4).jpg": "/feel-pot-shopping-web/static/media/pot-(4).dfefa720eb832e2415cb.jpg",
+    "static/media/pot-(34).jpg": "/feel-pot-shopping-web/static/media/pot-(34).dfefa720eb832e2415cb.jpg",
+    "static/media/head-1.jpg": "/feel-pot-shopping-web/static/media/head-1.290e24b133dd4be268e4.jpg",
     "static/media/pot-(12).jpg": "/feel-pot-shopping-web/static/media/pot-(12).be41cbf48f18fa196ab9.jpg",
     "static/media/pot-(15).jpg": "/feel-pot-shopping-web/static/media/pot-(15).1514fca144f9ec1f3f3f.jpg",
+    "static/media/pot-(4).jpg": "/feel-pot-shopping-web/static/media/pot-(4).3b75042fc10c23cfa8bd.jpg",
     "static/media/pot-(14).jpg": "/feel-pot-shopping-web/static/media/pot-(14).acfe705cbbda3569e6f0.jpg",
     "static/media/pot-(13).jpg": "/feel-pot-shopping-web/static/media/pot-(13).0b307755e0af5e0ad93d.jpg",
+    "static/media/pot-(3).jpg": "/feel-pot-shopping-web/static/media/pot-(3).d1a813a3f9040575f51c.jpg",
+    "static/media/pot-(1).jpg": "/feel-pot-shopping-web/static/media/pot-(1).e85562d5dd17d6d32dd3.jpg",
+    "static/media/pot-(2).jpg": "/feel-pot-shopping-web/static/media/pot-(2).2ca2976ac989e4ba2c18.jpg",
     "static/media/pot-(18).jpg": "/feel-pot-shopping-web/static/media/pot-(18).01e085264ae32c5b7d67.jpg",
     "static/media/pot-(30).jpg": "/feel-pot-shopping-web/static/media/pot-(30).1ebad09b2fd956fe0789.jpg",
     "static/media/pot-(28).jpg": "/feel-pot-shopping-web/static/media/pot-(28).e7f88bea63670cf3d0a2.jpg",
+    "static/media/head-3.jpg": "/feel-pot-shopping-web/static/media/head-3.827907c4f5be2389433d.jpg",
     "static/media/pot-(29).jpg": "/feel-pot-shopping-web/static/media/pot-(29).44e0c31390dfba9b5de3.jpg",
     "static/media/pot-(25).jpg": "/feel-pot-shopping-web/static/media/pot-(25).26ac2e25e5ea7ed002d7.jpg",
     "static/media/pot-(27).jpg": "/feel-pot-shopping-web/static/media/pot-(27).2a8a1901c21856f77d77.jpg",
     "static/media/pot-(26).jpg": "/feel-pot-shopping-web/static/media/pot-(26).86bf81a99754c8a252a2.jpg",
     "index.html": "/feel-pot-shopping-web/index.html",
     "main.434d85ca.css.map": "/feel-pot-shopping-web/static/css/main.434d85ca.css.map",
-    "main.b5e2d2ea.js.map": "/feel-pot-shopping-web/static/js/main.b5e2d2ea.js.map"
+    "main.c5271678.js.map": "/feel-pot-shopping-web/static/js/main.c5271678.js.map"
   },
   "entrypoints": [
     "static/css/main.434d85ca.css",
-    "static/js/main.b5e2d2ea.js"
+    "static/js/main.c5271678.js"
   ]
 }
