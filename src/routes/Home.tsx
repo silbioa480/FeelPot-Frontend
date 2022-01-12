@@ -14,8 +14,8 @@ import { fetchProduct } from "../api";
 
 const CardForm = styled(Card)`
   border-radius: 5px;
-  box-shadow: 0px 10px 13px -7px #00000011,
-    -2px 12px 10px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 10px 13px -7px rgba(49, 47, 47, 0.04),
+    -2px 12px 10px 3px rgba(49, 47, 47, 0.04);
   &:hover {
     transform: scale(1.05);
     transition: transform 0.4s ease-in;
