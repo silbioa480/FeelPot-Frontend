@@ -54,19 +54,18 @@ function Home() {
   return (
     <>
       <div style={{ height: "50px" }}></div>
-      <Row xs={2} md={3} xxl={4} className="g-4" style={{ margin: "0 auto" }}>
+      <Row xs={2} md={4} xxl={6} className="g-4" style={{ margin: "0 auto" }}>
         {isLoading
           ? "로딩중..."
           : data?.map((product) => (
-              <Col key={product.index}>
+              <Col key={product.index} style={{ height: "350px" }}>
                 <Link to={`/${product.index}`}>
                   <Card>
                     <Card.Img
                       variant="top"
                       src={require(`../img/${product.image}`)}
                       style={{
-                        minHeight: "410px",
-                        maxHeight: "410px",
+                        height: "200px",
                         maxWidth: "100%",
                       }}
                     />
@@ -74,8 +73,15 @@ function Home() {
                       <Card.Title style={{ textAlign: "center" }}>
                         {product.name}
                       </Card.Title>
-                      <Card.Text style={{ textAlign: "center" }}>
-                        {product.description}
+                      <Card.Text
+                        style={{
+                          height: "80px",
+                          textAlign: "start",
+                        }}
+                      >
+                        {product.description.length > 100
+                          ? product.description.slice(0, 100) + "..."
+                          : product.description}
                       </Card.Text>
                     </Card.Body>
                   </Card>
