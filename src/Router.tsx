@@ -6,6 +6,7 @@ import Footer from "./views/Footer";
 import Home from "./routes/Home";
 import LogIn from "./routes/LogIn";
 import SignUp from "./routes/SignUp";
+import Product from "./routes/Product";
 
 function Router() {
   return (
@@ -14,6 +15,9 @@ function Router() {
       <Header />
       <Section>
         <Switch>
+          <Route path="/:productId">
+            <Product />
+          </Route>
           <Route path="/logIn">
             <LogIn />
           </Route>
