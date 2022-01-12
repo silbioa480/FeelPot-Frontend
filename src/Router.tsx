@@ -15,14 +15,14 @@ function Router() {
       <Header />
       <Section>
         <Switch>
-          <Route path="/:productId">
-            <Product />
-          </Route>
           <Route path="/logIn">
             <LogIn />
           </Route>
           <Route path="/signUp">
             <SignUp />
+          </Route>
+          <Route path="/:productId">
+            <Product />
           </Route>
           <Route path="/">
             <Home />

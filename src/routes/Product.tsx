@@ -30,6 +30,7 @@ function Product() {
             fontSize: "48px",
             fontWeight: "bold",
             margin: "20px 0",
+            color: "#D67158",
           }}
         >
           {product.name}
@@ -40,6 +41,7 @@ function Product() {
             width: "80%",
             fontSize: "24px",
             lineHeight: "200%",
+            color: "#148BA0",
           }}
         >
           {product.description}
