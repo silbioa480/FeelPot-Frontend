@@ -54,7 +54,7 @@ function Home() {
   return (
     <>
       <div style={{ height: "50px" }}></div>
-      <Row xs={1} md={2} className="g-4" style={{ margin: "0 auto" }}>
+      <Row xs={2} md={3} xxl={4} className="g-4" style={{ margin: "0 auto" }}>
         {isLoading
           ? "로딩중..."
           : data?.map((product) => (

@@ -21,7 +21,11 @@ function Navigation() {
             <LinkBox>
               <Link to="/">Home</Link>
             </LinkBox>
-            <NavDropdown title="전체 화분" id="collasible-nav-dropdown">
+            <NavDropdown
+              title="       전체 화분"
+              id="collasible-nav-dropdown"
+              style={{ alignSelf: "center" }}
+            >
               <LinkBox style={{ margin: "10px 0" }}>
                 <Link to="/">인기 화분</Link>
               </LinkBox>
