@@ -54,7 +54,7 @@ function Home() {
   return (
     <>
       <div style={{ height: "50px" }}></div>
-      <Row xs={2} md={4} xxl={6} className="g-4" style={{ margin: "0 auto" }}>
+      <Row xs={2} md={4} className="g-4" style={{ margin: "0 auto" }}>
         {isLoading
           ? "로딩중..."
           : data?.map((product) => (
@@ -75,12 +75,12 @@ function Home() {
                       </Card.Title>
                       <Card.Text
                         style={{
-                          height: "80px",
+                          height: "90px",
                           textAlign: "start",
                         }}
                       >
-                        {product.description.length > 100
-                          ? product.description.slice(0, 100) + "..."
+                        {product.description.length > 50
+                          ? product.description.slice(0, 50) + "..."
                           : product.description}
                       </Card.Text>
                     </Card.Body>
