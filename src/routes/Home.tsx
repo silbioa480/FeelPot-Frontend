@@ -13,11 +13,26 @@ import styled from "styled-components";
 import { fetchProduct } from "../api";
 
 const CardForm = styled(Card)`
-  border-radius: 20px;
-  box-shadow: 0px 10px 13px -7px #000000, -2px 12px 10px 3px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  box-shadow: 0px 10px 13px -7px #00000011,
+    -2px 12px 10px 3px rgba(0, 0, 0, 0.1);
   &:hover {
     transform: scale(1.05);
     transition: transform 0.4s ease-in;
+  }
+`;
+
+const RowForm = styled(Row)`
+  display: grid;
+  margin: 0 auto;
+
+  @media (orientation: landscape) {
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5rem;
+  }
+  @media (orientation: portrait) {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5rem;
   }
 `;
 interface IProduct {
@@ -70,7 +85,7 @@ function Home() {
   return (
     <>
       <div style={{ height: "50px" }}></div>
-      <Row xs={2} md={4} className="g-4" style={{ margin: "0 auto" }}>
+      <RowForm>
         {isLoading ? (
           <Spinner
             animation="grow"
@@ -91,13 +106,7 @@ function Home() {
                   state: { product },
                 }}
               >
-                <CardForm
-                  style={{
-                    borderRadius: "20px",
-                    boxShadow:
-                      "0px 10px 13px -7px #000000, -2px 12px 10px 3px rgba(0,0,0,0.2)",
-                  }}
-                >
+                <CardForm>
                   <Card.Img
                     variant="top"
                     src={require(`../img/${product.image}`)}
@@ -105,7 +114,7 @@ function Home() {
                     style={{
                       height: "200px",
                       maxWidth: "100%",
-                      borderRadius: "20px 20px 0 0",
+                      borderRadius: "5px 5px 0 0",
                     }}
                   />
                   <Card.Body>
@@ -114,7 +123,7 @@ function Home() {
                     </Card.Title>
                     <Card.Text
                       style={{
-                        height: "90px",
+                        height: "50px",
                         textAlign: "start",
                       }}
                     >
@@ -128,7 +137,7 @@ function Home() {
             </Col>
           ))
         )}
-      </Row>
+      </RowForm>
       {/* <Pagination style={{ margin: "0 auto", alignSelf: "center" }}>
         {pagi}
       </Pagination> */}
