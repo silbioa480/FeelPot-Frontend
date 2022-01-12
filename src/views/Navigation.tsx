@@ -10,7 +10,19 @@ const LinkBox = styled.div`
 
 function Navigation() {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
+    <Navbar
+      collapseOnSelect
+      expand="lg"
+      bg="light"
+      variant="light"
+      style={{
+        position: "sticky",
+        top: "0",
+        left: "0",
+        right: "0",
+        zIndex: "100",
+      }}
+    >
       <Container>
         <Link to="/">
           <Navbar.Brand>필 수제화분</Navbar.Brand>
