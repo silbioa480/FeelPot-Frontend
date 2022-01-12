@@ -17,9 +17,9 @@ function Product() {
   return (
     <>
       <div style={{ height: "50px" }}></div>
-      <Figure>
+      <Figure style={{ textAlign: "center" }}>
         <Figure.Image
-          width={"auto"}
+          width={"90%"}
           height={"auto"}
           alt={product.image}
           src={require(`../img/${product.image}`)}
@@ -28,13 +28,20 @@ function Product() {
           style={{
             textAlign: "center",
             fontSize: "48px",
-            fontStyle: "bold",
+            fontWeight: "bold",
             margin: "20px 0",
           }}
         >
           {product.name}
         </Figure.Caption>
-        <Figure.Caption style={{ fontSize: "24px", lineHeight: "200%" }}>
+        <Figure.Caption
+          style={{
+            margin: "0 auto",
+            width: "80%",
+            fontSize: "24px",
+            lineHeight: "200%",
+          }}
+        >
           {product.description}
         </Figure.Caption>
       </Figure>
