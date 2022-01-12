@@ -2,8 +2,17 @@ import React, { MouseEventHandler, useEffect, useState } from "react";
 import { Card, Col, Pagination, PaginationProps, Row } from "react-bootstrap";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
 import { fetchProduct } from "../api";
 
+const CardForm = styled(Card)`
+  border-radius: 20px;
+  box-shadow: 0px 10px 13px -7px #000000, -2px 12px 10px 3px rgba(0, 0, 0, 0.2);
+  &:hover {
+    transform: scale(1.05);
+    transition: transform 0.4s ease-in;
+  }
+`;
 interface IProduct {
   name: string;
   index: number;
@@ -58,15 +67,22 @@ function Home() {
         {isLoading
           ? "로딩중..."
           : data?.map((product) => (
-              <Col key={product.index} style={{ height: "350px" }}>
+              <Col key={product.index} style={{ height: "380px" }}>
                 <Link to={`/${product.index}`}>
-                  <Card>
+                  <CardForm
+                    style={{
+                      borderRadius: "20px",
+                      boxShadow:
+                        "0px 10px 13px -7px #000000, -2px 12px 10px 3px rgba(0,0,0,0.2)",
+                    }}
+                  >
                     <Card.Img
                       variant="top"
                       src={require(`../img/${product.image}`)}
                       style={{
                         height: "200px",
                         maxWidth: "100%",
+                        borderRadius: "20px 20px 0 0",
                       }}
                     />
                     <Card.Body>
@@ -84,7 +100,7 @@ function Home() {
                           : product.description}
                       </Card.Text>
                     </Card.Body>
-                  </Card>
+                  </CardForm>
                 </Link>
               </Col>
             ))}
