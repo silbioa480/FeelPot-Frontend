@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/feel-pot-shopping-web/static/css/main.434d85ca.css",
-    "main.js": "/feel-pot-shopping-web/static/js/main.6cea9ca8.js",
+    "main.js": "/feel-pot-shopping-web/static/js/main.8c3d94e4.js",
     "static/media/pot-(1).jpg": "/feel-pot-shopping-web/static/media/pot-(1).3e4cd8172db8ecadda42.jpg",
     "static/media/pot-(11).jpg": "/feel-pot-shopping-web/static/media/pot-(11).e35453cd7a602fc2a7dd.jpg",
     "static/media/pot-(10).jpg": "/feel-pot-shopping-web/static/media/pot-(10).dedfd0c1cc5e1e96e862.jpg",
@@ -34,10 +34,10 @@
     "static/media/pot-(26).jpg": "/feel-pot-shopping-web/static/media/pot-(26).86bf81a99754c8a252a2.jpg",
     "index.html": "/feel-pot-shopping-web/index.html",
     "main.434d85ca.css.map": "/feel-pot-shopping-web/static/css/main.434d85ca.css.map",
-    "main.6cea9ca8.js.map": "/feel-pot-shopping-web/static/js/main.6cea9ca8.js.map"
+    "main.8c3d94e4.js.map": "/feel-pot-shopping-web/static/js/main.8c3d94e4.js.map"
   },
   "entrypoints": [
     "static/css/main.434d85ca.css",
-    "static/js/main.6cea9ca8.js"
+    "static/js/main.8c3d94e4.js"
   ]
 }
