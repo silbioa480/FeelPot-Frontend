@@ -24,6 +24,7 @@ function Product() {
             height={"auto"}
             alt={product.image}
             src={require(`../img/${product.image}`)}
+            loading="lazy"
           />
           <Figure.Caption
             style={{

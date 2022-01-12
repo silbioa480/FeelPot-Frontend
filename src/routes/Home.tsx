@@ -101,6 +101,7 @@ function Home() {
                   <Card.Img
                     variant="top"
                     src={require(`../img/${product.image}`)}
+                    loading="lazy"
                     style={{
                       height: "200px",
                       maxWidth: "100%",
