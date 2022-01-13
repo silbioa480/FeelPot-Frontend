@@ -1,6 +1,5 @@
 import { Figure, Spinner } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
-
 interface IProduct {
   product: {
     name: string;
