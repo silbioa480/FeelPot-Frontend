@@ -62,21 +62,33 @@ function Navigation() {
             </NavDropdown>
           </Nav>
           <div style={{ textAlign: "center" }}>
-            <a href="https://band.us/@feel2018" target="_blank">
+            <a
+              href="https://band.us/@feel2018"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img
                 src={require("../img/BAND_Icon.png")}
                 alt="BAND"
                 style={{ width: "48px", height: "48px", margin: "0 20px" }}
               />
             </a>
-            <a href="https://blog.naver.com/daeng13" target="_blank">
+            <a
+              href="https://blog.naver.com/daeng13"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img
                 src={require("../img/blog_icon.png")}
                 alt="Blog"
                 style={{ width: "48px", height: "48px", margin: "0 20px" }}
               />
             </a>
-            <a href="https://www.instagram.com/feel_pot/" target="_blank">
+            <a
+              href="https://www.instagram.com/feel_pot/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <img
                 src={require("../img/Instagram_icon.png")}
                 alt="Instagram"

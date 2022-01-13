@@ -1,22 +1,17 @@
 import { Figure, Spinner } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
-interface IProduct {
-  product: {
-    name: string;
-    index: number;
-    image: string;
-    price: number;
-    description: string;
-  };
+import IProduct from "../model/IProduct";
+
+interface IState {
+  product: IProduct;
 }
 
 function Product() {
-  const { state } = useLocation<IProduct>();
+  const { state } = useLocation<IState>();
   const product = state?.product;
 
   return (
     <>
-      <div style={{ height: "50px" }}></div>
       {product ? (
         <Figure style={{ textAlign: "center" }}>
           <Figure.Image

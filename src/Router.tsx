@@ -14,6 +14,7 @@ function Router() {
       <Navigation />
       <Header />
       <Section>
+        <div style={{ height: "50px" }}></div>
         <Switch>
           <Route path="/product/:productId">
             <Product />

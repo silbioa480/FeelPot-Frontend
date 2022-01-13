@@ -3,6 +3,7 @@ import { useQuery } from "react-query";
 import { Link, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { fetchProduct } from "../api";
+import IProduct from "../model/IProduct";
 import Pagin from "../views/Pagin";
 
 const CardForm = styled(Card)`
@@ -29,14 +30,6 @@ const RowForm = styled(Row)`
     column-gap: 2rem;
   }
 `;
-interface IProduct {
-  name: string;
-  index: number;
-  image: string;
-  price: number;
-  description: string;
-}
-
 interface IHomeParams {
   pageNumber: string;
 }
@@ -47,7 +40,6 @@ function Home() {
 
   return (
     <>
-      <div style={{ height: "50px" }}></div>
       <RowForm>
         {isLoading ? (
           <Spinner
@@ -96,16 +88,18 @@ function Home() {
                       >
                         {product.name}
                       </Card.Title>
-                      <p
-                        style={{
-                          textAlign: "end",
-                          margin: "10px 0",
-                          fontFamily: "NanumGimYuICe",
-                          fontSize: "1.5em",
-                        }}
-                      >
-                        {product.price} 원
-                      </p>
+                      <div>
+                        <p
+                          style={{
+                            textAlign: "end",
+                            margin: "10px 0",
+                            fontFamily: "NanumGimYuICe",
+                            fontSize: "1.5em",
+                          }}
+                        >
+                          {product.price} 원
+                        </p>
+                      </div>
                       <Card.Text
                         style={{
                           height: "50px",
