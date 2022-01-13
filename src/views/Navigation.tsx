@@ -36,11 +36,12 @@ function Navigation() {
             <img
               src={require(`../favicon/android-icon-48x48.png`)}
               alt="필"
-              style={{ marginRight: "10px" }}
+              style={{ marginRight: "10px", borderRadius: "5px" }}
             />
             필 수제화분
           </Navbar.Brand>
         </Link>
+
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
@@ -60,6 +61,29 @@ function Navigation() {
               </LinkBox>
             </NavDropdown>
           </Nav>
+          <div style={{ textAlign: "center" }}>
+            <a href="https://band.us/@feel2018" target="_blank">
+              <img
+                src={require("../img/BAND_Icon.png")}
+                alt="BAND"
+                style={{ width: "48px", height: "48px", margin: "0 20px" }}
+              />
+            </a>
+            <a href="https://blog.naver.com/daeng13" target="_blank">
+              <img
+                src={require("../img/blog_icon.png")}
+                alt="Blog"
+                style={{ width: "48px", height: "48px", margin: "0 20px" }}
+              />
+            </a>
+            <a href="https://www.instagram.com/feel_pot/" target="_blank">
+              <img
+                src={require("../img/Instagram_icon.png")}
+                alt="Instagram"
+                style={{ width: "48px", height: "48px", margin: "0 20px" }}
+              />
+            </a>
+          </div>
           <Nav>
             <LinkBox>
               <Link to="/logIn">로그인</Link>
