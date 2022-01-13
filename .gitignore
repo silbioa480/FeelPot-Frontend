@@ -5,6 +5,7 @@
 /.pnp
 .pnp.js
 img/
+favicon/
 
 # testing
 /coverage

@@ -26,8 +26,18 @@ function Navigation() {
       <Container>
         <Link to="/1">
           <Navbar.Brand
-            style={{ fontFamily: "NanumGarMaesGeur", fontSize: "1.8em" }}
+            style={{
+              fontFamily: "NanumGarMaesGeur",
+              fontSize: "1.8em",
+              display: "flex",
+              alignItems: "center",
+            }}
           >
+            <img
+              src={require(`../favicon/android-icon-48x48.png`)}
+              alt="필"
+              style={{ marginRight: "10px" }}
+            />
             필 수제화분
           </Navbar.Brand>
         </Link>
