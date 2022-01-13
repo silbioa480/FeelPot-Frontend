@@ -25,7 +25,11 @@ function Navigation() {
     >
       <Container>
         <Link to="/1">
-          <Navbar.Brand>필 수제화분</Navbar.Brand>
+          <Navbar.Brand
+            style={{ fontFamily: "NanumGarMaesGeur", fontSize: "1.8em" }}
+          >
+            필 수제화분
+          </Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

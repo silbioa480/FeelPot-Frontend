@@ -5,6 +5,7 @@ interface IProduct {
     name: string;
     index: number;
     image: string;
+    price: number;
     description: string;
   };
 }
@@ -28,7 +29,8 @@ function Product() {
           <Figure.Caption
             style={{
               textAlign: "center",
-              fontSize: "48px",
+              fontFamily: "NanumGarMaesGeur",
+              fontSize: "4em",
               fontWeight: "bold",
               margin: "20px 0",
               color: "#D67158",
@@ -40,9 +42,23 @@ function Product() {
             style={{
               margin: "0 auto",
               width: "80%",
-              fontSize: "24px",
+              fontFamily: "NanumGimYuICe",
+              fontSize: "2em",
               lineHeight: "200%",
-              color: "#148BA0",
+              color: "#191b1b",
+              textAlign: "end",
+            }}
+          >
+            {product.price} 원
+          </Figure.Caption>
+          <Figure.Caption
+            style={{
+              margin: "0 auto",
+              width: "80%",
+              fontFamily: "NanumGaRamYeonGgoc",
+              fontSize: "1.5em",
+              lineHeight: "200%",
+              color: "#1a7c8d",
             }}
           >
             {product.description}

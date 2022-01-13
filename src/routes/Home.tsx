@@ -18,6 +18,7 @@ const CardForm = styled(Card)`
 const RowForm = styled(Row)`
   display: grid;
   margin: 0 auto;
+  grid-row-gap: 80px;
 
   @media (orientation: landscape) {
     grid-template-columns: 1fr 1fr 1fr;
@@ -32,6 +33,7 @@ interface IProduct {
   name: string;
   index: number;
   image: string;
+  price: number;
   description: string;
 }
 
@@ -85,19 +87,36 @@ function Home() {
                     />
                     <Card.Body>
                       <Card.Title
-                        style={{ textAlign: "center", whiteSpace: "nowrap" }}
+                        style={{
+                          textAlign: "center",
+                          whiteSpace: "nowrap",
+                          fontFamily: "NanumGarMaesGeur",
+                          fontSize: "2em",
+                        }}
                       >
                         {product.name}
                       </Card.Title>
+                      <p
+                        style={{
+                          textAlign: "end",
+                          margin: "10px 0",
+                          fontFamily: "NanumGimYuICe",
+                          fontSize: "1.5em",
+                        }}
+                      >
+                        {product.price} 원
+                      </p>
                       <Card.Text
                         style={{
                           height: "50px",
                           textAlign: "start",
                           overflow: "hidden",
+                          fontFamily: "NanumGaRamYeonGgoc",
+                          fontSize: "1.3em",
                         }}
                       >
-                        {product.description.length > 60
-                          ? product.description.slice(0, 60) + "..."
+                        {product.description.length > 50
+                          ? product.description.slice(0, 50) + "..."
                           : product.description}
                       </Card.Text>
                     </Card.Body>

@@ -44,6 +44,7 @@ function Pagin({ pageCount, active }: IParginParams) {
         display: "flex",
         justifyContent: "center",
         textAlign: "center",
+        margin: "40px 0",
       }}
     >
       {items}
