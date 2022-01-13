@@ -18,7 +18,7 @@ const CardForm = styled(Card)`
     -2px 12px 10px 3px rgba(49, 47, 47, 0.04);
   &:hover {
     transform: scale(1.05);
-    transition: transform 0.4s ease-in;
+    transition: transform 0.3s ease-in;
   }
 `;
 
@@ -102,7 +102,7 @@ function Home() {
             <Col key={product.index} style={{ height: "380px" }}>
               <Link
                 to={{
-                  pathname: `/${product.index}`,
+                  pathname: `/product/${product.index}`,
                   state: { product },
                 }}
               >
