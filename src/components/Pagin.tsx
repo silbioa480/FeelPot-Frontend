@@ -14,6 +14,7 @@ const PaginItem = styled.li`
   border: 1px solid;
   border-radius: 5px;
   padding: 10px 0;
+  background-color: white;
 
   &:hover {
     background-color: rgba(51, 47, 47, 0.1);
@@ -44,7 +45,7 @@ function Pagin({ pageCount, active }: IParginParams) {
         display: "flex",
         justifyContent: "center",
         textAlign: "center",
-        margin: "40px 0",
+        marginTop: "100px",
       }}
     >
       {items}

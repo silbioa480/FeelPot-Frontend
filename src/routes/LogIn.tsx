@@ -14,8 +14,10 @@ import {
 function LogIn() {
   const [id, setId] = useState("");
   const [pw, setPw] = useState("");
+
   const [isWarning, setIsWarning] = useState(false);
   const [warningMsg, setWarningMsg] = useState("");
+  const [warningPosition, setWarningPosition] = useState("");
 
   const handleChangeId = (event: React.ChangeEvent<HTMLInputElement>) => {
     setId(event.currentTarget.value);
@@ -28,6 +30,7 @@ function LogIn() {
     event.preventDefault();
 
     if (!id) {
+      setWarningPosition("-65%");
       setWarningMsg("아이디를 입력하세요.");
       setIsWarning(true);
       setTimeout(() => setIsWarning(false), 2000);
@@ -35,6 +38,7 @@ function LogIn() {
 
       return false;
     } else if (!pw) {
+      setWarningPosition("-48%");
       setWarningMsg("비밀번호를 입력하세요.");
       setIsWarning(true);
       setTimeout(() => setIsWarning(false), 2000);
@@ -62,6 +66,7 @@ function LogIn() {
               onChange={handleChangeId}
             />
           </FormLine>
+
           <FormLine>
             <FormLabelP htmlFor="pw">PW</FormLabelP>
             <FormInput
@@ -71,11 +76,18 @@ function LogIn() {
               onChange={handleChangePw}
             />
           </FormLine>
+
           <SubmitBtn value="LOG IN" />
+
           <div style={{ textAlign: "center" }}>
             Don't you have ID? <Link to="/signUp">sign up</Link>
           </div>
-          <Alert show={isWarning} variant={"danger"} style={{ top: "-75%" }}>
+
+          <Alert
+            show={isWarning}
+            variant={"danger"}
+            style={{ top: `${warningPosition}` }}
+          >
             {warningMsg}
           </Alert>
         </FormShape>

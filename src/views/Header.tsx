@@ -7,7 +7,7 @@ const Img = styled.img`
 
 function Header() {
   return (
-    <Carousel fade style={{ minWidth: "438px" }}>
+    <Carousel fade style={{ minWidth: "424px" }}>
       <Carousel.Item>
         <Img
           className="d-block w-100"

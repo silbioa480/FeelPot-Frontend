@@ -70,7 +70,7 @@ function Navigation() {
               <img
                 src={require("../img/BAND_Icon.png")}
                 alt="BAND"
-                style={{ width: "48px", height: "48px", margin: "0 20px" }}
+                style={{ width: "36px", height: "36px", margin: "0 20px" }}
               />
             </a>
             <a
@@ -81,7 +81,7 @@ function Navigation() {
               <img
                 src={require("../img/blog_icon.png")}
                 alt="Blog"
-                style={{ width: "48px", height: "48px", margin: "0 20px" }}
+                style={{ width: "36px", height: "36px", margin: "0 20px" }}
               />
             </a>
             <a
@@ -92,7 +92,7 @@ function Navigation() {
               <img
                 src={require("../img/Instagram_icon.png")}
                 alt="Instagram"
-                style={{ width: "48px", height: "48px", margin: "0 20px" }}
+                style={{ width: "36px", height: "36px", margin: "0 20px" }}
               />
             </a>
           </div>

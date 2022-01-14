@@ -1,11 +1,9 @@
-import styled from "styled-components";
-
 type Props = {
   children: React.ReactNode;
 };
 
 function Section({ children }: Props) {
-  return <div>{children}</div>;
+  return <div style={{ marginTop: "50px" }}>{children}</div>;
 }
 
 export default Section;

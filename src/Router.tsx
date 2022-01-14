@@ -14,7 +14,6 @@ function Router() {
       <Navigation />
       <Header />
       <Section>
-        <div style={{ height: "50px" }}></div>
         <Switch>
           <Route path="/product/:productId">
             <Product />
@@ -26,9 +25,6 @@ function Router() {
             <SignUp />
           </Route>
           <Route path="/:pageNumber">
-            <Home />
-          </Route>
-          <Route path="/">
             <Home />
           </Route>
         </Switch>

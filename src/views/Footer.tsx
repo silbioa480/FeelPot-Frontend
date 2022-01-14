@@ -2,6 +2,7 @@ function Footer() {
   return (
     <div
       style={{
+        padding: "50px",
         height: "5vh",
         display: "flex",
         alignItems: "center",

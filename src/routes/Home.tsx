@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { fetchProduct } from "../api";
 import IProduct from "../model/IProduct";
-import Pagin from "../views/Pagin";
+import Pagin from "../components/Pagin";
 
 const CardForm = styled(Card)`
   border-radius: 5px;
@@ -72,7 +72,7 @@ function Home() {
                       src={require(`../img/${product.image}`)}
                       loading="lazy"
                       style={{
-                        height: "200px",
+                        height: "250px",
                         maxWidth: "100%",
                         borderRadius: "5px 5px 0 0",
                       }}
@@ -102,7 +102,7 @@ function Home() {
                       </div>
                       <Card.Text
                         style={{
-                          height: "50px",
+                          height: "40px",
                           textAlign: "start",
                           overflow: "hidden",
                           fontFamily: "NanumGaRamYeonGgoc",

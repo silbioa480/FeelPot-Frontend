@@ -23,8 +23,8 @@ export const FormTitle = styled.h2`
 `;
 
 export const FormLine = styled.div`
-  border-bottom: 2px solid #adadad;
-  margin: 80px 30px;
+  border-bottom: 2px solid #7467e9;
+  margin: 0 30px;
   padding: 10px 10px;
 `;
 
@@ -37,10 +37,13 @@ export const FormInput = styled.input`
   font-size: 16px;
   height: 25px;
   background: none;
+  padding-top: 50px;
+  padding-bottom: 10px;
 `;
 
 export const SubmitBtn = styled.input.attrs({ type: "submit" })`
   left: 40%;
+  margin-top: 100px;
   margin-bottom: 50px;
   width: 80%;
   height: 40px;
@@ -57,7 +60,7 @@ export const SubmitBtn = styled.input.attrs({ type: "submit" })`
 
 export const FormLabelP = styled.label`
   position: relative;
-  right: 49%;
-  top: 20px;
+  right: 45%;
+  top: 60px;
   opacity: 0.7;
 `;
