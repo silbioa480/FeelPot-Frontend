@@ -12,23 +12,29 @@ function Router() {
   return (
     <BrowserRouter>
       <Navigation />
+
       <Header />
+
       <Section>
         <Switch>
           <Route path="/product/:productId">
             <Product />
           </Route>
+
           <Route path="/logIn">
             <LogIn />
           </Route>
+
           <Route path="/signUp">
             <SignUp />
           </Route>
+
           <Route path="/:pageNumber">
             <Home />
           </Route>
         </Switch>
       </Section>
+
       <Footer />
     </BrowserRouter>
   );

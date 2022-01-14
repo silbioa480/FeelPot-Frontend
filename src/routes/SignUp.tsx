@@ -197,7 +197,7 @@ function SignUp() {
             htmlFor="phoneNumber"
             style={{ right: "-35%", top: "30px" }}
           >
-            ex) 010-0000-0000
+            ex. 010-0000-0000
           </FormLabelP>
           <FormInput
             type="tel"
