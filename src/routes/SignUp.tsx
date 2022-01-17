@@ -101,6 +101,8 @@ function SignUp() {
     });
 
     console.log(member);
+
+    alert("회원가입 완료!");
   };
 
   return (

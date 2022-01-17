@@ -49,6 +49,8 @@ function LogIn() {
 
     setId("");
     setPw("");
+
+    alert("로그인 완료!");
   };
 
   return (
