@@ -1,5 +1,5 @@
 interface IMember {
-  id: number;
+  id: string;
   password: string;
   name: string;
   birth: Date;
