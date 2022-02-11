@@ -25,3 +25,5 @@ class MemberService {
     return axios.delete(MEMBER_API_BASE_URL + "/" + memberId);
   }
 }
+
+export default new MemberService();
