@@ -11,6 +11,8 @@ import { useForm } from "react-hook-form";
 import MemberService from "../services/MemberService";
 import Member from "../model/Member";
 import AlertSpan from "../components/AlertSpan";
+import Swal from "sweetalert2";
+import { useHistory } from "react-router-dom";
 
 interface ICreateMemberForm {
   id: string;
@@ -30,6 +32,8 @@ function SignUp() {
     setError,
     formState: { errors },
   } = useForm<ICreateMemberForm>();
+
+  const history = useHistory();
 
   const onValid = async ({
     id,
@@ -74,6 +78,13 @@ function SignUp() {
 
     console.log(member);
     await MemberService.createMember(member);
+
+    Swal.fire({
+      icon: "success",
+      title: "회원가입이 완료되었습니다.",
+    });
+
+    history.replace("/logIn");
   };
 
   return (
