@@ -9,7 +9,7 @@ export const FormContainer = styled.div`
 export const FormShape = styled.form`
   width: 70%;
   height: 600px;
-  padding: 30px, 20px;
+  padding: 30px 20px;
   background-color: #ffffff;
   text-align: center;
   border-radius: 15px;

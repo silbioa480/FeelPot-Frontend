@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { Alert } from "react-bootstrap";
 import {
   FormContainer,
   FormInput,
@@ -9,88 +7,61 @@ import {
   FormTitle,
   SubmitBtn,
 } from "../css/styledForm";
+import { useForm } from "react-hook-form";
+import MemberService from "../services/MemberService";
 import Member from "../model/Member";
+import AlertSpan from "../components/AlertSpan";
+
+interface ICreateMemberForm {
+  id: string;
+  password: string;
+  passwordCheck: string;
+  name: string;
+  birth: Date;
+  isMale: boolean;
+  email: string;
+  phoneNumber: string;
+}
 
 function SignUp() {
-  const [id, setId] = useState("");
-  const [password, setPassword] = useState("");
-  const [name, setName] = useState("");
-  const [birth, setBirth] = useState<Date>(new Date());
-  const [isMale, setIsMale] = useState(true);
-  const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [isDateChange, setIsDateChange] = useState(false);
-  const [isMaleChange, setIsMaleChange] = useState(false);
+  const {
+    register,
+    handleSubmit,
+    setError,
+    formState: { errors },
+  } = useForm<ICreateMemberForm>();
 
-  const [isWarning, setIsWarning] = useState(false);
-  const [warningMsg, setWarningMsg] = useState("");
-  const [warningPosition, setWarningPosition] = useState("");
+  const onValid = async ({
+    id,
+    password,
+    passwordCheck,
+    name,
+    birth,
+    isMale,
+    email,
+    phoneNumber,
+  }: ICreateMemberForm) => {
+    if (id === (await MemberService.getMemberById(id)?.then((res) => res.id))) {
+      setError(
+        "id",
+        { message: "이미 등록된 아이디입니다." },
+        { shouldFocus: true }
+      );
 
-  function wakeWarning(msg: string, position: string, focusId: string) {
-    setWarningPosition(position);
-    setWarningMsg(msg);
-    setIsWarning(true);
-    setTimeout(() => setIsWarning(false), 2000);
-    document.getElementById(focusId)?.focus();
-  }
-
-  const handleChangeId = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setId(event.currentTarget.value);
-  };
-  const handleChangePassword = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setPassword(event.currentTarget.value);
-  };
-  const handleChangeName = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setName(event.currentTarget.value);
-  };
-  const handleChangeBirth = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setBirth(new Date(event.currentTarget.value));
-    setIsDateChange(true);
-  };
-  const handleChangeIsMale = (event: React.ChangeEvent<HTMLInputElement>) => {
-    if (
-      event.currentTarget.id === "male" &&
-      event.currentTarget.value === "on"
-    ) {
-      setIsMale(true);
-    } else setIsMale(false);
-
-    setIsMaleChange(true);
-  };
-  const handleChangeEmail = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setEmail(event.currentTarget.value);
-  };
-  const handleChangePN = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setPhoneNumber(event.currentTarget.value);
-  };
-
-  const handleSubmit = (event: React.FormEvent<HTMLElement>) => {
-    event.preventDefault();
-
-    if (!id) {
-      wakeWarning("아이디를 입력하세요.", "-83%", "id");
-      return false;
-    } else if (!password) {
-      wakeWarning("비밀번호를 입력하세요.", "-74%", "password");
-      return false;
-    } else if (!name) {
-      wakeWarning("이름을 입력하세요.", "-65%", "name");
-      return false;
-    } else if (!isDateChange) {
-      wakeWarning("생년월일을 입력하세요.", "-56%", "birth");
-      return false;
-    } else if (!isMaleChange) {
-      wakeWarning("성별을 선택하세요.", "-47%", "male");
-      return false;
-    } else if (!email) {
-      wakeWarning("이메일을 입력하세요.", "-34%", "email");
-      return false;
-    } else if (!phoneNumber) {
-      wakeWarning("전화번호를 입력하세요.", "-25%", "phoneNumber");
-      return false;
+      return;
     }
 
-    let member = new Member({
+    if (password !== passwordCheck) {
+      setError(
+        "passwordCheck",
+        { message: "비밀번호가 같지 않습니다." },
+        { shouldFocus: true }
+      );
+
+      return;
+    }
+
+    let member: Member = new Member(
       id,
       password,
       name,
@@ -98,22 +69,27 @@ function SignUp() {
       isMale,
       email,
       phoneNumber,
-    });
+      false
+    );
 
     console.log(member);
-
-    alert("회원가입 완료!");
+    await MemberService.createMember(member);
   };
 
   return (
     <FormContainer>
-      <FormShape onSubmit={handleSubmit} style={{ height: "1100px" }}>
+      <FormShape onSubmit={handleSubmit(onValid)} style={{ height: "auto" }}>
         <FormTitle>Sign Up</FormTitle>
 
         <FormLine>
           <FormLabelP htmlFor="id">ID</FormLabelP>
-          <FormInput type="text" id="id" value={id} onChange={handleChangeId} />
+          <FormInput
+            type="text"
+            id={"id"}
+            {...register("id", { required: "아이디를 입력하세요." })}
+          />
         </FormLine>
+        {errors?.id?.message ? <AlertSpan msg={errors.id.message} /> : ""}
 
         <FormLine>
           <FormLabelP htmlFor="password" style={{ right: "43%" }}>
@@ -121,29 +97,64 @@ function SignUp() {
           </FormLabelP>
           <FormInput
             type="password"
-            id="password"
-            value={password}
-            onChange={handleChangePassword}
             autoComplete="on"
+            id={"password"}
+            {...register("password", {
+              required: "비밀번호를 입력하세요.",
+              pattern: {
+                value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/,
+                message:
+                  "최소 8 자, 최소 하나의 문자 및 하나의 숫자를 입력하세요.",
+              },
+            })}
           />
         </FormLine>
+        {errors?.password?.message ? (
+          <AlertSpan msg={errors.password.message} />
+        ) : (
+          ""
+        )}
+
+        <FormLine>
+          <FormLabelP htmlFor="passwordCheck" style={{ right: "43%" }}>
+            Password Check
+          </FormLabelP>
+          <FormInput
+            type="password"
+            autoComplete="on"
+            id={"passwordCheck"}
+            {...register("passwordCheck", {
+              required: "같은 비밀번호를 입력하세요.",
+            })}
+          />
+        </FormLine>
+        {errors?.passwordCheck?.message ? (
+          <AlertSpan msg={errors.passwordCheck.message} />
+        ) : (
+          ""
+        )}
 
         <FormLine>
           <FormLabelP htmlFor="name">Name</FormLabelP>
           <FormInput
             type="text"
-            id="name"
-            value={name}
-            onChange={handleChangeName}
+            id={"name"}
+            {...register("name", { required: "이름을 입력하세요." })}
           />
         </FormLine>
+        {errors?.name?.message ? <AlertSpan msg={errors.name.message} /> : ""}
 
         <FormLine>
           <FormLabelP htmlFor="birth" style={{ right: "43%" }}>
             Birth Date
           </FormLabelP>
-          <FormInput type="date" id="birth" onChange={handleChangeBirth} />
+          <FormInput
+            type="date"
+            id={"birth"}
+            {...register("birth", { required: "생년월일을 입력하세요." })}
+          />
         </FormLine>
+        {errors?.birth?.message ? <AlertSpan msg={errors.birth.message} /> : ""}
 
         <FormLine style={{ marginTop: "50px" }}>
           <div>
@@ -153,8 +164,8 @@ function SignUp() {
             <FormInput
               type="radio"
               id="male"
-              name="isMale"
-              onChange={handleChangeIsMale}
+              value="male"
+              {...register("isMale", { required: true })}
               style={{
                 position: "relative",
                 right: "-46.8%",
@@ -170,8 +181,8 @@ function SignUp() {
             <FormInput
               type="radio"
               id="female"
-              name="isMale"
-              onChange={handleChangeIsMale}
+              value="female"
+              {...register("isMale", { required: true })}
               style={{
                 position: "relative",
                 right: "-46%",
@@ -180,16 +191,29 @@ function SignUp() {
             />
           </div>
         </FormLine>
+        {errors?.isMale?.message ? (
+          <AlertSpan msg={errors.isMale.message} />
+        ) : (
+          ""
+        )}
 
         <FormLine>
           <FormLabelP htmlFor="email">E-mail</FormLabelP>
           <FormInput
             type="email"
-            id="email"
-            value={email}
-            onChange={handleChangeEmail}
+            autoComplete="on"
+            id={"email"}
+            {...register("email", {
+              required: "이메일을 입력하세요.",
+              pattern: {
+                value:
+                  /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i,
+                message: "올바른 이메일 형식을 입력하세요.",
+              },
+            })}
           />
         </FormLine>
+        {errors?.email?.message ? <AlertSpan msg={errors.email.message} /> : ""}
 
         <FormLine>
           <FormLabelP htmlFor="phoneNumber" style={{ right: "33%" }}>
@@ -203,22 +227,23 @@ function SignUp() {
           </FormLabelP>
           <FormInput
             type="tel"
-            id="phoneNumber"
-            value={phoneNumber}
-            pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}"
-            onChange={handleChangePN}
+            id={"phoneNumber"}
+            {...register("phoneNumber", {
+              required: "전화번호를 입력하세요.",
+              pattern: {
+                value: /[0-9]{3}-[0-9]{4}-[0-9]{4}/,
+                message: "올바른 전화번호 형식을 입력하세요.",
+              },
+            })}
           />
         </FormLine>
+        {errors?.phoneNumber?.message ? (
+          <AlertSpan msg={errors.phoneNumber.message} />
+        ) : (
+          ""
+        )}
 
         <SubmitBtn value="Sign Up" />
-
-        <Alert
-          show={isWarning}
-          variant={"danger"}
-          style={{ top: `${warningPosition}` }}
-        >
-          {warningMsg}
-        </Alert>
       </FormShape>
     </FormContainer>
   );

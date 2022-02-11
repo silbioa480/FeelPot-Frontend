@@ -6,6 +6,7 @@ interface IMember {
   isMale: boolean;
   email: string;
   phoneNumber: string;
+  isAdmin: boolean;
 }
 
 export default IMember;

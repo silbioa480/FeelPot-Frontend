@@ -73,6 +73,7 @@ function LogIn() {
             <FormLabelP htmlFor="pw">PW</FormLabelP>
             <FormInput
               type="password"
+              autoComplete="on"
               id="pw"
               value={pw}
               onChange={handleChangePw}

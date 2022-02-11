@@ -5,16 +5,18 @@ import Member from "../model/Member";
 const MEMBER_API_BASE_URL = "https://localhost:8080/api/members";
 
 class MemberService {
-  getMembers() {
-    return axios.get(MEMBER_API_BASE_URL);
+  getMembers(): Promise<Member[]> {
+    return axios.get<Member[]>(MEMBER_API_BASE_URL).then((res) => res.data);
   }
 
   createMember(member: Member) {
     return axios.post(MEMBER_API_BASE_URL, member);
   }
 
-  getMemberById(memberId: IMember["id"]) {
-    return axios.get(MEMBER_API_BASE_URL + "/" + memberId);
+  getMemberById(memberId: IMember["id"]): Promise<Member> {
+    return axios
+      .get(MEMBER_API_BASE_URL + "/" + memberId)
+      .then((res) => res.data);
   }
 
   updateMember(member: Member, memberId: IMember["id"]) {
