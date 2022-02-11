@@ -13,6 +13,7 @@ import Member from "../model/Member";
 import AlertSpan from "../components/AlertSpan";
 import Swal from "sweetalert2";
 import { useHistory } from "react-router-dom";
+import CryptoJS from "crypto-js/core";
 
 interface ICreateMemberForm {
   id: string;
@@ -65,9 +66,11 @@ function SignUp() {
       return;
     }
 
+    let hash = CryptoJS.AES.encrypt(password, "").toString();
+
     let member: Member = new Member(
       id,
-      password,
+      hash,
       name,
       birth,
       isMale,
