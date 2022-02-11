@@ -6,4 +6,13 @@ Backend: https://github.com/FeelPot-Backend
 
 github-pages: https://silbioa480.github.io/FeelPot-Frontend
 
-React + Typescript + styled-components + react-bootstrap + react-query + react-router-dom
++ Frontend stacks:
+    + React
+    + Typescript
+    + Recoil
+    + styled-components
+    + react-bootstrap
+    + react-query
+    + react-router-dom
+    + react-hook-form
+    + axios
