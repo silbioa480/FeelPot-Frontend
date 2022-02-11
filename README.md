@@ -1,9 +1,9 @@
 # Feel Pot Shopping Web
 
-https://github.com/silbioa480/feel-pot-shopping-web
+This Repository is Frontend repository of Feel Pot.
 
-https://silbioa480.github.io/feel-pot-shopping-web
+Backend: https://github.com/FeelPot-Backend
 
-This project is personal project.
+github-pages: https://silbioa480.github.io/FeelPot-Frontend
 
 React + Typescript + styled-components + react-bootstrap + react-query + react-router-dom
