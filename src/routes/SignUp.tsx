@@ -49,7 +49,6 @@ function SignUp() {
     phoneNumber,
   }: ICreateMemberForm) => {
     let exist;
-
     try {
       exist = await MemberService.getMemberById(id);
     } catch (err) {}
@@ -72,8 +71,8 @@ function SignUp() {
 
       return;
     }
-    let isMale: boolean;
 
+    let isMale: boolean;
     if (gender === "male") isMale = true;
     else isMale = false;
 
@@ -91,7 +90,6 @@ function SignUp() {
       isAdmin: false,
     };
 
-    console.log(member);
     await MemberService.createMember(member);
 
     await Swal.fire({
@@ -191,7 +189,7 @@ function SignUp() {
               type="radio"
               id="male"
               value="male"
-              {...register("gender", { required: true })}
+              {...register("gender", { required: "성별을 선택하세요." })}
               style={{
                 position: "relative",
                 right: "-46.8%",
@@ -208,7 +206,7 @@ function SignUp() {
               type="radio"
               id="female"
               value="female"
-              {...register("gender", { required: true })}
+              {...register("gender", { required: "성별을 선택하세요." })}
               style={{
                 position: "relative",
                 right: "-46%",
