@@ -32,34 +32,32 @@ function SignUp() {
     register,
     handleSubmit,
     setError,
-    formState: {errors},
+    formState: { errors },
   } = useForm<ICreateMemberForm>();
 
   const history = useHistory();
   const salt = useRecoilValue(saltKey);
 
   const onValid = async ({
-                           id,
-                           password,
-                           passwordConfirm,
-                           name,
-                           birth,
-                           gender,
-                           email,
-                           phoneNumber,
-                         }: ICreateMemberForm) => {
-
+    id,
+    password,
+    passwordConfirm,
+    name,
+    birth,
+    gender,
+    email,
+    phoneNumber,
+  }: ICreateMemberForm) => {
     // Id check whether already registed.
     let exist;
     try {
       exist = await MemberService.getMemberById(id);
-    } catch (err) {
-    }
+    } catch (err) {}
     if (exist !== undefined) {
       setError(
         "id",
-        {message: "이미 등록된 아이디입니다."},
-        {shouldFocus: true}
+        { message: "이미 등록된 아이디입니다." },
+        { shouldFocus: true }
       );
 
       return;
@@ -69,8 +67,8 @@ function SignUp() {
     if (password !== passwordConfirm) {
       setError(
         "passwordConfirm",
-        {message: "비밀번호가 같지 않습니다."},
-        {shouldFocus: true}
+        { message: "비밀번호가 같지 않습니다." },
+        { shouldFocus: true }
       );
 
       return;
@@ -78,8 +76,7 @@ function SignUp() {
 
     // Convert gender string to isMale boolean.
     let isMale: boolean;
-    if (gender === "male") isMale = true;
-    else isMale = false;
+    isMale = gender === "male";
 
     // Encrypt password to hash.
     let CryptoJS = require("crypto-js");
@@ -112,7 +109,7 @@ function SignUp() {
 
   return (
     <FormContainer>
-      <FormShape onSubmit={handleSubmit(onValid)} style={{height: "auto"}}>
+      <FormShape onSubmit={handleSubmit(onValid)} style={{ height: "auto" }}>
         <FormTitle>Sign Up</FormTitle>
 
         <FormLine>
@@ -120,13 +117,13 @@ function SignUp() {
           <FormInput
             type="text"
             id={"id"}
-            {...register("id", {required: "아이디를 입력하세요."})}
+            {...register("id", { required: "아이디를 입력하세요." })}
           />
         </FormLine>
-        {errors?.id?.message ? <AlertSpan msg={errors.id.message}/> : ""}
+        {errors?.id?.message ? <AlertSpan msg={errors.id.message} /> : ""}
 
         <FormLine>
-          <FormLabelP htmlFor="password" style={{right: "43%"}}>
+          <FormLabelP htmlFor="password" style={{ right: "43%" }}>
             Password
           </FormLabelP>
           <FormInput
@@ -144,13 +141,13 @@ function SignUp() {
           />
         </FormLine>
         {errors?.password?.message ? (
-          <AlertSpan msg={errors.password.message}/>
+          <AlertSpan msg={errors.password.message} />
         ) : (
           ""
         )}
 
         <FormLine>
-          <FormLabelP htmlFor="passwordCheck" style={{right: "43%"}}>
+          <FormLabelP htmlFor="passwordCheck" style={{ right: "43%" }}>
             Password Confirm
           </FormLabelP>
           <FormInput
@@ -163,7 +160,7 @@ function SignUp() {
           />
         </FormLine>
         {errors?.passwordConfirm?.message ? (
-          <AlertSpan msg={errors.passwordConfirm.message}/>
+          <AlertSpan msg={errors.passwordConfirm.message} />
         ) : (
           ""
         )}
@@ -173,33 +170,33 @@ function SignUp() {
           <FormInput
             type="text"
             id={"name"}
-            {...register("name", {required: "이름을 입력하세요."})}
+            {...register("name", { required: "이름을 입력하세요." })}
           />
         </FormLine>
-        {errors?.name?.message ? <AlertSpan msg={errors.name.message}/> : ""}
+        {errors?.name?.message ? <AlertSpan msg={errors.name.message} /> : ""}
 
         <FormLine>
-          <FormLabelP htmlFor="birth" style={{right: "43%"}}>
+          <FormLabelP htmlFor="birth" style={{ right: "43%" }}>
             Birth Date
           </FormLabelP>
           <FormInput
             type="date"
             id={"birth"}
-            {...register("birth", {required: "생년월일을 입력하세요."})}
+            {...register("birth", { required: "생년월일을 입력하세요." })}
           />
         </FormLine>
-        {errors?.birth?.message ? <AlertSpan msg={errors.birth.message}/> : ""}
+        {errors?.birth?.message ? <AlertSpan msg={errors.birth.message} /> : ""}
 
-        <FormLine style={{marginTop: "50px"}}>
+        <FormLine style={{ marginTop: "50px" }}>
           <div>
-            <FormLabelP htmlFor="male" style={{top: "0", right: "39%"}}>
+            <FormLabelP htmlFor="male" style={{ top: "0", right: "39%" }}>
               Male
             </FormLabelP>
             <FormInput
               type="radio"
               id="male"
               value="male"
-              {...register("gender", {required: "성별을 선택하세요."})}
+              {...register("gender", { required: "성별을 선택하세요." })}
               style={{
                 position: "relative",
                 right: "-46.8%",
@@ -209,14 +206,14 @@ function SignUp() {
             />
           </div>
           <div>
-            <FormLabelP htmlFor="female" style={{top: "0", right: "38%"}}>
+            <FormLabelP htmlFor="female" style={{ top: "0", right: "38%" }}>
               Female
             </FormLabelP>
             <FormInput
               type="radio"
               id="female"
               value="female"
-              {...register("gender", {required: "성별을 선택하세요."})}
+              {...register("gender", { required: "성별을 선택하세요." })}
               style={{
                 position: "relative",
                 right: "-46%",
@@ -226,7 +223,7 @@ function SignUp() {
           </div>
         </FormLine>
         {errors?.gender?.message ? (
-          <AlertSpan msg={errors.gender.message}/>
+          <AlertSpan msg={errors.gender.message} />
         ) : (
           ""
         )}
@@ -247,15 +244,15 @@ function SignUp() {
             })}
           />
         </FormLine>
-        {errors?.email?.message ? <AlertSpan msg={errors.email.message}/> : ""}
+        {errors?.email?.message ? <AlertSpan msg={errors.email.message} /> : ""}
 
         <FormLine>
-          <FormLabelP htmlFor="phoneNumber" style={{right: "33%"}}>
+          <FormLabelP htmlFor="phoneNumber" style={{ right: "33%" }}>
             Phone Number
           </FormLabelP>
           <FormLabelP
             htmlFor="phoneNumber"
-            style={{right: "-35%", top: "30px"}}
+            style={{ right: "-35%", top: "30px" }}
           >
             ex. 010-0000-0000
           </FormLabelP>
@@ -272,12 +269,12 @@ function SignUp() {
           />
         </FormLine>
         {errors?.phoneNumber?.message ? (
-          <AlertSpan msg={errors.phoneNumber.message}/>
+          <AlertSpan msg={errors.phoneNumber.message} />
         ) : (
           ""
         )}
 
-        <SubmitBtn value="Sign Up"/>
+        <SubmitBtn value="Sign Up" />
       </FormShape>
     </FormContainer>
   );
