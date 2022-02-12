@@ -1,6 +1,10 @@
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { useRecoilValue } from "recoil";
+import { isLoginAtom } from "../atoms";
+import NotLogInNav from "../components/NotLogInNav";
+import LoggedInNav from "../components/LoggedInNav";
 
 const LinkBox = styled.div`
   align-self: center;
@@ -9,6 +13,8 @@ const LinkBox = styled.div`
 `;
 
 function Navigation() {
+  const isLogin = useRecoilValue(isLoginAtom);
+
   return (
     <Navbar
       collapseOnSelect
@@ -96,14 +102,7 @@ function Navigation() {
               />
             </a>
           </div>
-          <Nav>
-            <LinkBox>
-              <Link to="/logIn">로그인</Link>
-            </LinkBox>
-            <LinkBox>
-              <Link to="/signUp">회원가입</Link>
-            </LinkBox>
-          </Nav>
+          <Nav>{isLogin ? <LoggedInNav /> : <NotLogInNav />}</Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
