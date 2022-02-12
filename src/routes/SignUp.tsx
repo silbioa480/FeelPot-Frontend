@@ -48,7 +48,7 @@ function SignUp() {
     email,
     phoneNumber,
   }: ICreateMemberForm) => {
-    // Id check whether already registed.
+    // id check whether already registered.
     let exist;
     try {
       exist = await MemberService.getMemberById(id);
