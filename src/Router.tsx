@@ -9,6 +9,7 @@ import SignUp from "./routes/SignUp";
 import Product from "./routes/Product";
 import MemberPage from "./routes/MemberPage";
 import CartPage from "./routes/CartPage";
+import MemberInfo from "./routes/MemberInfo";
 
 function Router() {
   return (
@@ -24,11 +25,17 @@ function Router() {
           </Route>
 
           <Route path="/member">
-            <MemberPage />
-          </Route>
+            <MemberPage>
+              <Switch>
+                <Route path="/member/cart">
+                  <CartPage />
+                </Route>
 
-          <Route path="/cart">
-            <CartPage />
+                <Route path="/member/:memberId">
+                  <MemberInfo />
+                </Route>
+              </Switch>
+            </MemberPage>
           </Route>
 
           <Route path="/logIn">

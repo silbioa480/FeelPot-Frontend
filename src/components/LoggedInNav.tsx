@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { BsCart, BsPerson } from "react-icons/bs";
-import { useSetRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 import { isLoginAtom, loggedMemberAtom } from "../atoms";
 
 const LinkBox = styled.div`
@@ -12,7 +12,7 @@ const LinkBox = styled.div`
 
 function LoggedInNav() {
   const setIsLogin = useSetRecoilState(isLoginAtom);
-  const setLoggedMember = useSetRecoilState(loggedMemberAtom);
+  const [loggedMember, setLoggedMember] = useRecoilState(loggedMemberAtom);
 
   return (
     <>
@@ -38,13 +38,13 @@ function LoggedInNav() {
       </LinkBox>
 
       <LinkBox>
-        <Link to="/cart">
+        <Link to="/member/cart">
           <BsCart style={{ width: "30px", height: "30px", margin: "0 10px" }} />
         </Link>
       </LinkBox>
 
       <LinkBox>
-        <Link to="/member">
+        <Link to={"/member/" + loggedMember.id}>
           <BsPerson
             style={{ width: "36px", height: "36px", margin: "0 10px" }}
           />
