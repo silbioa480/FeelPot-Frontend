@@ -14,8 +14,8 @@ import Swal from "sweetalert2";
 import { useHistory } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { saltKey } from "../atoms";
-import IMember from "../model/IMember";
-import IMemberForm from "../model/IMemberForm";
+import IMember from "../interface/IMember";
+import IMemberForm from "../interface/IMemberForm";
 
 function SignUp() {
   const {

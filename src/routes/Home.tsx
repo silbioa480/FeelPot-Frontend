@@ -3,13 +3,14 @@ import { useQuery } from "react-query";
 import { Link, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { fetchProduct } from "../api";
-import IProduct from "../model/IProduct";
+import IProduct from "../interface/IProduct";
 import Pagin from "../components/Pagin";
 
 const CardForm = styled(Card)`
   border-radius: 5px;
   box-shadow: 0px 10px 13px -7px rgba(49, 47, 47, 0.04),
     -2px 12px 10px 3px rgba(49, 47, 47, 0.04);
+
   &:hover {
     transform: scale(1.05);
     transition: transform 0.3s ease-in;
@@ -30,6 +31,7 @@ const RowForm = styled(Row)`
     column-gap: 2rem;
   }
 `;
+
 interface IHomeParams {
   pageNumber: string;
 }

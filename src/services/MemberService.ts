@@ -1,5 +1,5 @@
 import axios, { AxiosResponse } from "axios";
-import IMember from "../model/IMember";
+import IMember from "../interface/IMember";
 
 const MEMBER_API_BASE_URL = "http://localhost:8080/api/members";
 

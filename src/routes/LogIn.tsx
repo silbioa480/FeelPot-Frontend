@@ -12,10 +12,10 @@ import {
 import { useForm } from "react-hook-form";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { isLoginAtom, saltKey } from "../atoms";
-import IMemberForm from "../model/IMemberForm";
+import IMemberForm from "../interface/IMemberForm";
 import AlertSpan from "../components/AlertSpan";
 import MemberService from "../services/MemberService";
-import IMember from "../model/IMember";
+import IMember from "../interface/IMember";
 
 function LogIn() {
   const {

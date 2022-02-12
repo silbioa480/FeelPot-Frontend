@@ -1,6 +1,6 @@
 import { Figure, Spinner } from "react-bootstrap";
 import { useLocation } from "react-router-dom";
-import IProduct from "../model/IProduct";
+import IProduct from "../interface/IProduct";
 
 interface IState {
   product: IProduct;
