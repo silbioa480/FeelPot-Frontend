@@ -16,3 +16,5 @@ github-pages: https://silbioa480.github.io/FeelPot-Frontend
     + react-router-dom
     + react-hook-form
     + axios
+    + SweetAlert2
+    + crypto-js
