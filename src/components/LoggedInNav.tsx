@@ -1,4 +1,4 @@
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { BsCart, BsPerson } from "react-icons/bs";
 import { useSetRecoilState } from "recoil";
@@ -12,7 +12,6 @@ const LinkBox = styled.div`
 
 function LoggedInNav() {
   const setIsLogin = useSetRecoilState(isLoginAtom);
-  const history = useHistory();
 
   return (
     <>
