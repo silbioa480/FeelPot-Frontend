@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { BsCart, BsPerson } from "react-icons/bs";
 import { useSetRecoilState } from "recoil";
-import { isLoginAtom } from "../atoms";
+import { isLoginAtom, loggedMemberAtom } from "../atoms";
 
 const LinkBox = styled.div`
   align-self: center;
@@ -12,6 +12,7 @@ const LinkBox = styled.div`
 
 function LoggedInNav() {
   const setIsLogin = useSetRecoilState(isLoginAtom);
+  const setLoggedMember = useSetRecoilState(loggedMemberAtom);
 
   return (
     <>
@@ -19,6 +20,16 @@ function LoggedInNav() {
         <Link
           onClick={() => {
             setIsLogin(false);
+            setLoggedMember({
+              id: "",
+              password: "",
+              name: "",
+              birth: new Date(),
+              isMale: false,
+              email: "",
+              phoneNumber: "",
+              isAdmin: false,
+            });
           }}
           to="/1"
         >
