@@ -10,8 +10,8 @@ import {
   SubmitBtn,
 } from "../css/styledForm";
 import { useForm } from "react-hook-form";
-import { useRecoilValue } from "recoil";
-import { saltKey } from "../atoms";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import { isLoginAtom, saltKey } from "../atoms";
 import IMemberForm from "../model/IMemberForm";
 import AlertSpan from "../components/AlertSpan";
 import MemberService from "../services/MemberService";
@@ -27,6 +27,7 @@ function LogIn() {
 
   const history = useHistory();
   const salt = useRecoilValue(saltKey);
+  const setIsLogin = useSetRecoilState(isLoginAtom);
 
   // Click submit button, onValid is called by handleSubmit.
   const onValid = async ({ id, password }: IMemberForm) => {
@@ -58,6 +59,9 @@ function LogIn() {
 
       return;
     }
+
+    // set isLogin to true;
+    setIsLogin(true);
 
     // If all process was completed, move to Home router.
     history.push("/1");
