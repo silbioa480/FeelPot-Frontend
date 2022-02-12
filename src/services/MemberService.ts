@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 import IMember from "../model/IMember";
 
 const MEMBER_API_BASE_URL = "http://localhost:8080/api/members";
@@ -12,7 +12,7 @@ class MemberService {
     return axios.post(MEMBER_API_BASE_URL, member);
   }
 
-  getMemberById(memberId: IMember["id"]) {
+  getMemberById(memberId: IMember["id"]): Promise<AxiosResponse<IMember>> {
     return axios.get(MEMBER_API_BASE_URL + "/" + memberId);
   }
 
