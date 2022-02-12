@@ -38,6 +38,7 @@ function SignUp() {
   const history = useHistory();
   const salt = useRecoilValue(saltKey);
 
+  // Click submit button, onValid is called by handleSubmit.
   const onValid = async ({
     id,
     password,
