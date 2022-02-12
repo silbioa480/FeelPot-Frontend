@@ -28,13 +28,13 @@ function LoggedInNav() {
       </LinkBox>
 
       <LinkBox>
-        <Link to="/1">
+        <Link to="/cart">
           <BsCart style={{ width: "36px", height: "36px", margin: "0 10px" }} />
         </Link>
       </LinkBox>
 
       <LinkBox>
-        <Link to="/1">
+        <Link to="/member">
           <BsPerson
             style={{ width: "36px", height: "36px", margin: "0 10px" }}
           />

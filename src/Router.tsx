@@ -7,6 +7,8 @@ import Home from "./routes/Home";
 import LogIn from "./routes/LogIn";
 import SignUp from "./routes/SignUp";
 import Product from "./routes/Product";
+import MemberPage from "./routes/MemberPage";
+import CartPage from "./routes/CartPage";
 
 function Router() {
   return (
@@ -19,6 +21,14 @@ function Router() {
         <Switch>
           <Route path="/product/:productId">
             <Product />
+          </Route>
+
+          <Route path="/member">
+            <MemberPage />
+          </Route>
+
+          <Route path="/cart">
+            <CartPage />
           </Route>
 
           <Route path="/logIn">
