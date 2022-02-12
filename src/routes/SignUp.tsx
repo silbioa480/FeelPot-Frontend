@@ -15,17 +15,7 @@ import { useHistory } from "react-router-dom";
 import { useRecoilValue } from "recoil";
 import { saltKey } from "../atoms";
 import IMember from "../model/IMember";
-
-interface ICreateMemberForm {
-  id: string;
-  password: string;
-  passwordConfirm: string;
-  name: string;
-  birth: Date;
-  gender: string;
-  email: string;
-  phoneNumber: string;
-}
+import IMemberForm from "../model/IMemberForm";
 
 function SignUp() {
   const {
@@ -33,7 +23,7 @@ function SignUp() {
     handleSubmit,
     setError,
     formState: { errors },
-  } = useForm<ICreateMemberForm>();
+  } = useForm<IMemberForm>();
 
   const history = useHistory();
   const salt = useRecoilValue(saltKey);
@@ -48,7 +38,7 @@ function SignUp() {
     gender,
     email,
     phoneNumber,
-  }: ICreateMemberForm) => {
+  }: IMemberForm) => {
     // id check whether already registered.
     let exist;
     try {
