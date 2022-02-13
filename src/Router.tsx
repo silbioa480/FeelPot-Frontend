@@ -10,6 +10,7 @@ import Product from "./routes/Product";
 import MemberPage from "./routes/MemberPage";
 import CartPage from "./routes/CartPage";
 import MemberInfo from "./routes/MemberInfo";
+import UpdateMember from "./routes/UpdateMember";
 
 function Router() {
   return (
@@ -29,6 +30,10 @@ function Router() {
               <Switch>
                 <Route path="/member/cart">
                   <CartPage />
+                </Route>
+
+                <Route path="/member/update/:memberId">
+                  <UpdateMember />
                 </Route>
 
                 <Route path="/member/:memberId">

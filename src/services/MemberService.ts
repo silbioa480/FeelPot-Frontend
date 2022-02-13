@@ -16,7 +16,10 @@ class MemberService {
     return axios.get(MEMBER_API_BASE_URL + "/" + memberId);
   }
 
-  updateMember(member: IMember, memberId: IMember["id"]) {
+  updateMember(
+    member: IMember,
+    memberId: IMember["id"]
+  ): Promise<AxiosResponse<IMember>> {
     return axios.put(MEMBER_API_BASE_URL + "/" + memberId, member);
   }
 

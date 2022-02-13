@@ -12,7 +12,7 @@ const MenuBox = styled.div`
   border: 1px solid;
   height: 50px;
   text-align: center;
-  align-items: center;
+  padding: 15px 0;
 `;
 
 function MemberPage({ children }: Props) {
@@ -26,7 +26,7 @@ function MemberPage({ children }: Props) {
         </Link>
 
         <Link to={"/member/update/" + loggedMember.id}>
-          <MenuBox>회원 정보 변경</MenuBox>
+          <MenuBox>회원 정보 수정</MenuBox>
         </Link>
 
         <Link to="/member/cart">
@@ -37,7 +37,9 @@ function MemberPage({ children }: Props) {
           <MenuBox>주문내역</MenuBox>
         </Link>
       </div>
-      <div>{children}</div>
+      <div style={{ width: "70%", display: "flex", justifyContent: "center" }}>
+        {children}
+      </div>
     </div>
   );
 }

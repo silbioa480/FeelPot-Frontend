@@ -14,7 +14,7 @@ function MemberInfo() {
     "일";
 
   return (
-    <>
+    <div>
       <div>환영합니다. {loggedMember.id} 님</div>
       <div>이름: {loggedMember.name}</div>
       <div>성별: {loggedMember.isMale ? "남성" : "여성"}</div>
@@ -22,7 +22,7 @@ function MemberInfo() {
       <div>생년월일: {birthStr}</div>
       <div>이메일: {loggedMember.email}</div>
       <div>전화번호: {loggedMember.phoneNumber}</div>
-    </>
+    </div>
   );
 }
 
