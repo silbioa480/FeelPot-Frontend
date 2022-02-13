@@ -26,6 +26,7 @@ function LoggedInNav() {
               name: "",
               birth: new Date(),
               isMale: false,
+              address: "",
               email: "",
               phoneNumber: "",
               isAdmin: false,

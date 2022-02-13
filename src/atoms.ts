@@ -19,6 +19,7 @@ export const loggedMemberAtom = atom<IMember>({
     name: "",
     birth: new Date(),
     isMale: false,
+    address: "",
     email: "",
     phoneNumber: "",
     isAdmin: false,

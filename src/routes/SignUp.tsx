@@ -36,6 +36,7 @@ function SignUp() {
     name,
     birth,
     gender,
+    address,
     email,
     phoneNumber,
   }: IMemberForm) => {
@@ -80,6 +81,7 @@ function SignUp() {
       name,
       birth,
       isMale,
+      address,
       email,
       phoneNumber,
       isAdmin: false,
@@ -215,6 +217,20 @@ function SignUp() {
         </FormLine>
         {errors?.gender?.message ? (
           <AlertSpan msg={errors.gender.message} />
+        ) : (
+          ""
+        )}
+
+        <FormLine>
+          <FormLabelP htmlFor="address">Address</FormLabelP>
+          <FormInput
+            type="text"
+            id={"address"}
+            {...register("address", { required: "주소지를 입력하세요." })}
+          />
+        </FormLine>
+        {errors?.address?.message ? (
+          <AlertSpan msg={errors.address.message} />
         ) : (
           ""
         )}

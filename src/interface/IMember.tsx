@@ -4,6 +4,7 @@ interface IMember {
   name: string;
   birth: Date;
   isMale: boolean;
+  address: string;
   email: string;
   phoneNumber: string;
   isAdmin: boolean;
