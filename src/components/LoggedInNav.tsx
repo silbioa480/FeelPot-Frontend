@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { BsCart, BsPerson } from "react-icons/bs";
 import { useRecoilState, useSetRecoilState } from "recoil";
 import { isLoginAtom, loggedMemberAtom } from "../atoms";
+import Swal from "sweetalert2";
 
 const LinkBox = styled.div`
   align-self: center;
@@ -18,7 +19,7 @@ function LoggedInNav() {
     <>
       <LinkBox>
         <Link
-          onClick={() => {
+          onClick={async () => {
             setIsLogin(false);
             setLoggedMember({
               id: "",
@@ -31,6 +32,11 @@ function LoggedInNav() {
               phoneNumber: "",
               isAdmin: false,
               cart: "",
+            });
+
+            await Swal.fire({
+              icon: "success",
+              title: "로그아웃 되었습니다.",
             });
           }}
           to="/1"
