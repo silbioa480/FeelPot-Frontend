@@ -52,7 +52,7 @@ function MemberInfo() {
 
         <tr>
           <td>전화번호</td>
-          <td>전화번호: {loggedMember.phoneNumber}</td>
+          <td>{loggedMember.phoneNumber}</td>
         </tr>
       </tbody>
     </Table>
