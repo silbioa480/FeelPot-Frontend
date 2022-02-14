@@ -9,7 +9,7 @@ import { BsCartPlus } from "react-icons/bs";
 
 const CardForm = styled(Card)`
   border-radius: 5px;
-  box-shadow: 0px 10px 13px -7px rgba(49, 47, 47, 0.04),
+  box-shadow: 0 10px 13px -7px rgba(49, 47, 47, 0.04),
     -2px 12px 10px 3px rgba(49, 47, 47, 0.04);
 
   &:hover {
@@ -157,7 +157,7 @@ function Home() {
         <Pagin
           pageCount={Math.ceil((data?.length ?? 1) / 6)}
           active={+pageNumber}
-        ></Pagin>
+        />
       )}
     </>
   );
