@@ -26,6 +26,8 @@ export const FormLine = styled.div`
   border-bottom: 2px solid #7467e9;
   margin: 0 30px;
   padding: 10px 10px;
+  display: flex;
+  justifycontent: space-between;
 `;
 
 export const FormInput = styled.input`
@@ -59,8 +61,9 @@ export const SubmitBtn = styled.input.attrs({ type: "submit" })`
 `;
 
 export const FormLabelP = styled.label`
-  position: relative;
-  right: 45%;
-  top: 60px;
+  width: 20%;
+  text-align: start;
+  display: block;
+  align-self: end;
   opacity: 0.7;
 `;

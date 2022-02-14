@@ -180,40 +180,43 @@ function SignUp() {
         </FormLine>
         {errors?.birth?.message ? <AlertSpan msg={errors.birth.message} /> : ""}
 
-        <FormLine style={{ marginTop: "50px" }}>
-          <div>
-            <FormLabelP htmlFor="male" style={{ top: "0", right: "39%" }}>
-              Male
-            </FormLabelP>
-            <FormInput
-              type="radio"
-              id="male"
-              value="male"
-              {...register("gender", { required: "성별을 선택하세요." })}
-              style={{
-                position: "relative",
-                right: "-46.8%",
-                width: "100px",
-                margin: "10px 0",
-              }}
-            />
-          </div>
-          <div>
-            <FormLabelP htmlFor="female" style={{ top: "0", right: "38%" }}>
-              Female
-            </FormLabelP>
-            <FormInput
-              type="radio"
-              id="female"
-              value="female"
-              {...register("gender", { required: "성별을 선택하세요." })}
-              style={{
-                position: "relative",
-                right: "-46%",
-                width: "100px",
-              }}
-            />
-          </div>
+        <FormLine
+          style={{
+            border: "0",
+            marginTop: "30px",
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <FormLabelP htmlFor="male">Male</FormLabelP>
+          <FormInput
+            type="radio"
+            id="male"
+            value="male"
+            {...register("gender", { required: "성별을 선택하세요." })}
+            style={{
+              width: "25px",
+              height: "25px",
+            }}
+          />
+        </FormLine>
+        <FormLine
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <FormLabelP htmlFor="female">Female</FormLabelP>
+          <FormInput
+            type="radio"
+            id="female"
+            value="female"
+            {...register("gender", { required: "성별을 선택하세요." })}
+            style={{
+              width: "25px",
+              height: "25px",
+            }}
+          />
         </FormLine>
         {errors?.gender?.message ? (
           <AlertSpan msg={errors.gender.message} />
@@ -257,12 +260,6 @@ function SignUp() {
           <FormLabelP htmlFor="phoneNumber" style={{ right: "33%" }}>
             Phone Number
           </FormLabelP>
-          <FormLabelP
-            htmlFor="phoneNumber"
-            style={{ right: "-35%", top: "30px" }}
-          >
-            ex. 010-0000-0000
-          </FormLabelP>
           <FormInput
             type="tel"
             id={"phoneNumber"}
@@ -270,7 +267,7 @@ function SignUp() {
               required: "전화번호를 입력하세요.",
               pattern: {
                 value: /[0-9]{3}-[0-9]{4}-[0-9]{4}/,
-                message: "올바른 전화번호 형식을 입력하세요.",
+                message: "올바른 전화번호 형식을 입력하세요. ex. 010-0000-0000",
               },
             })}
           />
