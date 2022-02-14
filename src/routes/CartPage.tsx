@@ -1,9 +1,10 @@
 import { useRecoilState } from "recoil";
-import { cartAtom, loggedMemberAtom } from "../atoms";
+import { cartAtom } from "../atoms";
 import styled from "styled-components";
 import { Card, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { RiDeleteBin2Line } from "react-icons/ri";
+import { useState } from "react";
 
 const CardForm = styled(Card)`
   border-radius: 5px;
@@ -43,14 +44,14 @@ const RowForm = styled(Row)`
 `;
 
 function CartPage() {
-  const [loggedMember, setLoggedMember] = useRecoilState(loggedMemberAtom);
+  const [sum, setSum] = useState<number>(0);
   const [cart, setCart] = useRecoilState(cartAtom);
 
   const handleCartDelete = () => {};
 
   return (
     <RowForm>
-      {cart === [] ? (
+      {cart.length === 0 ? (
         <h1>장바구니에 상품이 없습니다.</h1>
       ) : (
         cart?.map((product) => (

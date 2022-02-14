@@ -68,8 +68,9 @@ function LogIn() {
     setIsLogin(true);
     setLoggedMember(member);
 
+    // set cart
     let products: IProduct[] = [];
-    for (const productId of member.cart.split("#")) {
+    for (const productId of member.cart?.split("#")) {
       if (productId !== "") {
         let product = await ProductService.getProductById(+productId).then(
           (res) => res.data
