@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { isLoginAtom, loggedMemberAtom } from "../atoms";
 import Swal from "sweetalert2";
+import MemberService from "../services/MemberService";
 
 interface IState {
   product: IProduct;
@@ -43,6 +44,8 @@ function Product() {
         ...loggedMember,
         cart: loggedMember.cart + product?.id + "#",
       });
+
+      await MemberService.updateMember(loggedMember, loggedMember.id);
 
       await Swal.fire({
         icon: "success",
