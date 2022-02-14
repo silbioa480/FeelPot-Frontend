@@ -42,7 +42,7 @@ function Product() {
     } else {
       setLoggedMember({
         ...loggedMember,
-        cart: loggedMember.cart + product?.id + "#",
+        cart: loggedMember.cart + product.id + "#",
       });
 
       await MemberService.updateMember(loggedMember, loggedMember.id);
