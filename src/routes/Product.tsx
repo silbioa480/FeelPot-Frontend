@@ -4,7 +4,7 @@ import IProduct from "../interface/IProduct";
 import { BsCartPlus } from "react-icons/bs";
 import styled from "styled-components";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { isLoginAtom, loggedMemberAtom } from "../atoms";
+import { cartAtom, isLoginAtom, loggedMemberAtom } from "../atoms";
 import Swal from "sweetalert2";
 import MemberService from "../services/MemberService";
 
@@ -30,6 +30,7 @@ function Product() {
 
   const isLogin = useRecoilValue(isLoginAtom);
   const [loggedMember, setLoggedMember] = useRecoilState(loggedMemberAtom);
+  const [cart, setCart] = useRecoilState(cartAtom);
 
   const handleCartPlus = async () => {
     if (!isLogin) {
@@ -41,11 +42,21 @@ function Product() {
       history.push("/login");
     } else {
       setLoggedMember({
-        ...loggedMember,
-        cart: loggedMember.cart + product.id + "#",
+        id: loggedMember.id,
+        password: loggedMember.password,
+        name: loggedMember.name,
+        birth: loggedMember.birth,
+        isMale: loggedMember.isMale,
+        address: loggedMember.address,
+        email: loggedMember.email,
+        phoneNumber: loggedMember.phoneNumber,
+        isAdmin: loggedMember.isAdmin,
+        cart: loggedMember.cart + "#" + product.id.toString(),
       });
 
       await MemberService.updateMember(loggedMember, loggedMember.id);
+
+      setCart([...cart, product]);
 
       await Swal.fire({
         icon: "success",

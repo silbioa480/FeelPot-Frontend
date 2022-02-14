@@ -11,11 +11,13 @@ import {
 } from "../css/styledForm";
 import { useForm } from "react-hook-form";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { isLoginAtom, loggedMemberAtom, saltKey } from "../atoms";
+import { cartAtom, isLoginAtom, loggedMemberAtom, saltKey } from "../atoms";
 import IMemberForm from "../interface/IMemberForm";
 import AlertSpan from "../components/AlertSpan";
 import MemberService from "../services/MemberService";
 import IMember from "../interface/IMember";
+import ProductService from "../services/ProductService";
+import IProduct from "../interface/IProduct";
 
 function LogIn() {
   const {
@@ -29,6 +31,7 @@ function LogIn() {
   const salt = useRecoilValue(saltKey);
   const setIsLogin = useSetRecoilState(isLoginAtom);
   const setLoggedMember = useSetRecoilState(loggedMemberAtom);
+  const setCart = useSetRecoilState(cartAtom);
 
   // Click submit button, onValid is called by handleSubmit.
   const onValid = async ({ id, password }: IMemberForm) => {
@@ -64,6 +67,17 @@ function LogIn() {
     // set isLogin to true;
     setIsLogin(true);
     setLoggedMember(member);
+
+    let products: IProduct[] = [];
+    for (const productId of member.cart.split("#")) {
+      if (productId !== "") {
+        let product = await ProductService.getProductById(+productId).then(
+          (res) => res.data
+        );
+        products.push(product);
+      }
+    }
+    setCart(products);
 
     // If all process was completed, move to Home router.
     history.push("/1");

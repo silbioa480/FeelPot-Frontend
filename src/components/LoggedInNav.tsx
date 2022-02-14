@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { BsCart, BsPerson } from "react-icons/bs";
 import { useRecoilState, useSetRecoilState } from "recoil";
-import { isLoginAtom, loggedMemberAtom } from "../atoms";
+import { cartAtom, isLoginAtom, loggedMemberAtom } from "../atoms";
 import Swal from "sweetalert2";
 
 const LinkBox = styled.div`
@@ -14,6 +14,7 @@ const LinkBox = styled.div`
 function LoggedInNav() {
   const setIsLogin = useSetRecoilState(isLoginAtom);
   const [loggedMember, setLoggedMember] = useRecoilState(loggedMemberAtom);
+  const setCart = useSetRecoilState(cartAtom);
 
   return (
     <>
@@ -34,6 +35,8 @@ function LoggedInNav() {
               cart: "",
             });
 
+            setCart([]);
+
             await Swal.fire({
               icon: "success",
               title: "로그아웃 되었습니다.",
@@ -47,14 +50,14 @@ function LoggedInNav() {
 
       <LinkBox>
         <Link to="/member/cart">
-          <BsCart style={{ width: "30px", height: "30px", margin: "0 10px" }} />
+          <BsCart style={{width: "30px", height: "30px", margin: "0 10px"}}/>
         </Link>
       </LinkBox>
 
       <LinkBox>
         <Link to={"/member/" + loggedMember.id}>
           <BsPerson
-            style={{ width: "36px", height: "36px", margin: "0 10px" }}
+            style={{width: "36px", height: "36px", margin: "0 10px"}}
           />
         </Link>
       </LinkBox>
