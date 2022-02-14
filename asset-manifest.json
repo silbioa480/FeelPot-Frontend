@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/FeelPot-Frontend/static/css/main.434d85ca.css",
-    "main.js": "/FeelPot-Frontend/static/js/main.c3ec0ccc.js",
+    "main.js": "/FeelPot-Frontend/static/js/main.c2cf9ce4.js",
     "static/media/pot-(31).jpg": "/FeelPot-Frontend/static/media/pot-(31).3e4cd8172db8ecadda42.jpg",
     "static/media/pot-(11).jpg": "/FeelPot-Frontend/static/media/pot-(11).e35453cd7a602fc2a7dd.jpg",
     "static/media/pot-(10).jpg": "/FeelPot-Frontend/static/media/pot-(10).dedfd0c1cc5e1e96e862.jpg",
@@ -42,10 +42,10 @@
     "static/media/BAND_Icon.png": "/FeelPot-Frontend/static/media/BAND_Icon.ffc11ee630b3a9f4ffe7.png",
     "index.html": "/FeelPot-Frontend/index.html",
     "main.434d85ca.css.map": "/FeelPot-Frontend/static/css/main.434d85ca.css.map",
-    "main.c3ec0ccc.js.map": "/FeelPot-Frontend/static/js/main.c3ec0ccc.js.map"
+    "main.c2cf9ce4.js.map": "/FeelPot-Frontend/static/js/main.c2cf9ce4.js.map"
   },
   "entrypoints": [
     "static/css/main.434d85ca.css",
-    "static/js/main.c3ec0ccc.js"
+    "static/js/main.c2cf9ce4.js"
   ]
 }
