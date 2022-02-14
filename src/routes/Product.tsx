@@ -1,8 +1,11 @@
 import { Figure, Spinner } from "react-bootstrap";
-import { useLocation } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import IProduct from "../interface/IProduct";
 import { BsCartPlus } from "react-icons/bs";
 import styled from "styled-components";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { cartAtom, isLoginAtom } from "../atoms";
+import Swal from "sweetalert2";
 
 interface IState {
   product: IProduct;
@@ -22,8 +25,31 @@ function Product() {
   const {state} = useLocation<IState>();
   const product = state?.product;
 
-  const handleCartPlus = () => {
-  }
+  const history = useHistory();
+
+  const isLogin = useRecoilValue(isLoginAtom);
+  const [cart, setCart] = useRecoilState(cartAtom);
+
+  const handleCartPlus = async () => {
+    if (!isLogin) {
+      await Swal.fire({
+        icon: "error",
+        title: "로그인이 필요합니다.",
+      });
+
+      history.push("/login")
+    } else {
+      setCart({
+        owner: cart.owner,
+        productIds: cart.productIds + product.id + ",",
+      });
+
+      await Swal.fire({
+        icon: "success",
+        title: "장바구니에 등록되었습니다.",
+      });
+    }
+  };
 
   return (
     <>

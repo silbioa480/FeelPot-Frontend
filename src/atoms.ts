@@ -1,4 +1,5 @@
 import { atom } from "recoil";
+import ICart from "./interface/ICart";
 import IMember from "./interface/IMember";
 
 export const saltKey = atom({
@@ -23,5 +24,13 @@ export const loggedMemberAtom = atom<IMember>({
     email: "",
     phoneNumber: "",
     isAdmin: false,
+  },
+});
+
+export const cartAtom = atom<ICart>({
+  key: "cart",
+  default: {
+    owner: "",
+    productIds: "",
   },
 });

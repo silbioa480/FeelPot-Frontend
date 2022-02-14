@@ -75,10 +75,10 @@ function Home() {
               +pageNumber * 6 > data.length ? data.length : +pageNumber * 6
             )
             .map((product) => (
-              <Col key={product.index} style={{ height: "380px" }}>
+              <Col key={product.id} style={{ height: "380px" }}>
                 <Link
                   to={{
-                    pathname: `/product/${product.index}`,
+                    pathname: `/product/${product.id}`,
                     state: { product },
                   }}
                 >
