@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { fetchProduct } from "../api";
 import IProduct from "../interface/IProduct";
 import Pagin from "../components/Pagin";
+import { BsCartPlus } from "react-icons/bs";
 
 const CardForm = styled(Card)`
   border-radius: 5px;
@@ -32,6 +33,17 @@ const RowForm = styled(Row)`
   }
 `;
 
+const CartPlus = styled(BsCartPlus)`
+  display: block;
+  width: 24px;
+  height: 24px;
+  align-self: center;
+
+  &:hover {
+    color: red;
+  }
+`;
+
 interface IHomeParams {
   pageNumber: string;
 }
@@ -39,6 +51,8 @@ interface IHomeParams {
 function Home() {
   const { isLoading, data } = useQuery<IProduct[]>("AllProduct", fetchProduct);
   const { pageNumber } = useParams<IHomeParams>();
+
+  const handleCartPlus = () => {};
 
   return (
     <>
@@ -90,8 +104,14 @@ function Home() {
                       >
                         {product.name}
                       </Card.Title>
-                      <div>
-                        <p
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <CartPlus onClick={handleCartPlus} />
+                        <div
                           style={{
                             textAlign: "end",
                             margin: "10px 0",
@@ -100,7 +120,7 @@ function Home() {
                           }}
                         >
                           {product.price} 원
-                        </p>
+                        </div>
                       </div>
                       <Card.Text
                         style={{
