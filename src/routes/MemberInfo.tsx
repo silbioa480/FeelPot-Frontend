@@ -26,32 +26,32 @@ function MemberInfo() {
 
       <tbody>
         <tr>
-          <td>이름</td>
+          <td style={{ width: "30%" }}>이름</td>
           <td>{loggedMember.name}</td>
         </tr>
 
         <tr>
-          <td>성별</td>
+          <td style={{ width: "30%" }}>성별</td>
           <td>{loggedMember.isMale ? "남성" : "여성"}</td>
         </tr>
 
         <tr>
-          <td>주소</td>
+          <td style={{ width: "30%" }}>주소</td>
           <td>{loggedMember.address}</td>
         </tr>
 
         <tr>
-          <td>생년월일</td>
+          <td style={{ width: "30%" }}>생년월일</td>
           <td>{birthStr}</td>
         </tr>
 
         <tr>
-          <td>이메일</td>
+          <td style={{ width: "30%" }}>이메일</td>
           <td>{loggedMember.email}</td>
         </tr>
 
         <tr>
-          <td>전화번호</td>
+          <td style={{ width: "30%" }}>전화번호</td>
           <td>{loggedMember.phoneNumber}</td>
         </tr>
       </tbody>
