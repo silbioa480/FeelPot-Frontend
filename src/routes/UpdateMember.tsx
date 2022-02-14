@@ -33,7 +33,7 @@ function UpdateMember() {
   useEffect(() => {
     setValue("name", loggedMember.name);
     setValue("birth", date);
-    setValue("gender", loggedMember.isMale ? "male" : "false");
+    setValue("gender", loggedMember.isMale ? "male" : "female");
     setValue("address", loggedMember.address);
     setValue("email", loggedMember.email);
     setValue("phoneNumber", loggedMember.phoneNumber);
