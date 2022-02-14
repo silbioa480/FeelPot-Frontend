@@ -2,10 +2,10 @@ import { Card, Col, Row, Spinner } from "react-bootstrap";
 import { useQuery } from "react-query";
 import { Link, useParams } from "react-router-dom";
 import styled from "styled-components";
-import { fetchProduct } from "../api";
 import IProduct from "../interface/IProduct";
 import Pagin from "../components/Pagin";
 import { BsCartPlus } from "react-icons/bs";
+import { fetchProduct } from "../api";
 
 const CardForm = styled(Card)`
   border-radius: 5px;

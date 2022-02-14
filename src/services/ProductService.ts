@@ -4,7 +4,7 @@ import IProduct from "../interface/IProduct";
 const PRODUCT_API_BASE_URL = "http://localhost:8080/api/products";
 
 class ProductService {
-  getProducts() {
+  getProducts(): Promise<AxiosResponse<IProduct[]>> {
     return axios.get<IProduct[]>(PRODUCT_API_BASE_URL);
   }
 
@@ -16,7 +16,10 @@ class ProductService {
     return axios.get<IProduct>(PRODUCT_API_BASE_URL + "/" + productId);
   }
 
-  updateProduct(product: IProduct, productId: IProduct["id"]): Promise<AxiosResponse<IProduct>> {
+  updateProduct(
+    product: IProduct,
+    productId: IProduct["id"]
+  ): Promise<AxiosResponse<IProduct>> {
     return axios.put<IProduct>(PRODUCT_API_BASE_URL + "/" + productId, product);
   }
 

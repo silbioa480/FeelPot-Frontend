@@ -1,3 +1,5 @@
 export function fetchProduct() {
-  return require("./product.json");
+  return fetch("http://localhost:8080/api/products").then((response) =>
+    response.json()
+  );
 }
