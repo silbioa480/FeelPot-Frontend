@@ -23,7 +23,7 @@ const CartPlus = styled(BsCartPlus)`
 `;
 
 function Product() {
-  const { state } = useLocation<IState>();
+  const {state} = useLocation<IState>();
   const product = state?.product;
 
   const history = useHistory();
@@ -41,6 +41,8 @@ function Product() {
 
       history.push("/login");
     } else {
+      let newCart = loggedMember.cart + "#" + product.id.toString();
+
       setLoggedMember({
         id: loggedMember.id,
         password: loggedMember.password,
@@ -51,9 +53,10 @@ function Product() {
         email: loggedMember.email,
         phoneNumber: loggedMember.phoneNumber,
         isAdmin: loggedMember.isAdmin,
-        cart: loggedMember.cart + "#" + product.id.toString(),
+        cart: newCart,
       });
 
+      console.log(loggedMember.cart + "#" + product.id.toString());
       await MemberService.updateMember(loggedMember, loggedMember.id);
 
       setCart([...cart, product]);
@@ -68,7 +71,7 @@ function Product() {
   return (
     <>
       {product ? (
-        <Figure style={{ textAlign: "center" }}>
+        <Figure style={{textAlign: "center"}}>
           <Figure.Image
             width={"95%"}
             height={"auto"}
@@ -96,7 +99,7 @@ function Product() {
               textAlign: "end",
             }}
           >
-            <CartPlus onClick={handleCartPlus} />
+            <CartPlus onClick={handleCartPlus}/>
           </Figure.Caption>
           <Figure.Caption
             style={{

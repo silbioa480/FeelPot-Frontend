@@ -1,10 +1,12 @@
 import { useRecoilState } from "recoil";
-import { cartAtom } from "../atoms";
+import { cartAtom, loggedMemberAtom } from "../atoms";
 import styled from "styled-components";
-import { Card, Col, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Button, Card, Col, Row } from "react-bootstrap";
+import { Link, useHistory } from "react-router-dom";
 import { RiDeleteBin2Line } from "react-icons/ri";
-import { useState } from "react";
+import React, { MouseEventHandler, useEffect, useState } from "react";
+import MemberService from "../services/MemberService";
+import Swal from "sweetalert2";
 
 const CardForm = styled(Card)`
   border-radius: 5px;
@@ -45,83 +47,142 @@ const RowForm = styled(Row)`
 
 function CartPage() {
   const [sum, setSum] = useState<number>(0);
+  const [loggedMember, setLoggedMember] = useRecoilState(loggedMemberAtom);
   const [cart, setCart] = useRecoilState(cartAtom);
 
-  const handleCartDelete = () => {};
+  const history = useHistory();
+
+  const handleCartDelete: MouseEventHandler<SVGElement> = async (event) => {
+    let productId = event.currentTarget.getAttribute("name");
+
+    setLoggedMember({
+      id: loggedMember.id,
+      password: loggedMember.password,
+      name: loggedMember.name,
+      birth: loggedMember.birth,
+      isMale: loggedMember.isMale,
+      address: loggedMember.address,
+      email: loggedMember.email,
+      phoneNumber: loggedMember.phoneNumber,
+      isAdmin: loggedMember.isAdmin,
+      cart: loggedMember.cart
+        .split("#")
+        .filter((item) => (item !== productId ? item : ""))
+        .join("#"),
+    });
+
+    await MemberService.updateMember(loggedMember, loggedMember.id);
+
+    setCart(
+      cart.filter((product) => {
+        if (product.id.toString() !== productId) return product;
+      })
+    );
+
+    await Swal.fire({
+      icon: "success",
+      title: "장바구니에서 삭제되었습니다.",
+    });
+
+    history.push("/member/cart");
+  };
+
+  useEffect(() => {
+    MemberService.updateMember(loggedMember, loggedMember.id);
+
+    for (let product of cart) {
+      setSum((prev) => prev + product.price);
+    }
+  }, []);
 
   return (
-    <RowForm>
-      {cart.length === 0 ? (
-        <h1>장바구니에 상품이 없습니다.</h1>
-      ) : (
-        cart?.map((product) => (
-          <Col key={product.id} style={{ height: "380px" }}>
-            <Link
-              to={{
-                pathname: `/product/${product.id}`,
-                state: { product },
-              }}
-            >
-              <CardForm>
-                <Card.Img
-                  variant="top"
-                  src={require(`../img/${product.image}`)}
-                  loading="lazy"
-                  style={{
-                    height: "250px",
-                    maxWidth: "100%",
-                    borderRadius: "5px 5px 0 0",
-                  }}
-                />
-                <Card.Body>
-                  <Card.Title
+    <div style={{ display: "flex", flexDirection: "column" }}>
+      <RowForm>
+        {cart.length === 0 ? (
+          <h1>장바구니에 상품이 없습니다.</h1>
+        ) : (
+          cart?.map((product) => (
+            <Col key={product.id} style={{ height: "380px" }}>
+              <Link
+                to={{
+                  pathname: `/product/${product.id}`,
+                  state: { product },
+                }}
+              >
+                <CardForm>
+                  <Card.Img
+                    variant="top"
+                    src={require(`../img/${product.image}`)}
+                    loading="lazy"
                     style={{
-                      textAlign: "center",
-                      whiteSpace: "nowrap",
-                      fontFamily: "NanumGarMaesGeur",
-                      fontSize: "2em",
+                      height: "250px",
+                      maxWidth: "100%",
+                      borderRadius: "5px 5px 0 0",
                     }}
-                  >
-                    {product.name}
-                  </Card.Title>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                    }}
-                  >
-                    <CartDelete onClick={handleCartDelete} />
-                    <div
+                  />
+                  <Card.Body>
+                    <Card.Title
                       style={{
-                        textAlign: "end",
-                        margin: "10px 0",
-                        fontFamily: "NanumGimYuICe",
-                        fontSize: "1.5em",
+                        textAlign: "center",
+                        whiteSpace: "nowrap",
+                        fontFamily: "NanumGarMaesGeur",
+                        fontSize: "2em",
                       }}
                     >
-                      {product.price} 원
+                      {product.name}
+                    </Card.Title>
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <CartDelete
+                        name={product.id.toString()}
+                        onClick={handleCartDelete}
+                      />
+                      <div
+                        style={{
+                          textAlign: "end",
+                          margin: "10px 0",
+                          fontFamily: "NanumGimYuICe",
+                          fontSize: "1.5em",
+                        }}
+                      >
+                        {product.price} 원
+                      </div>
                     </div>
-                  </div>
-                  <Card.Text
-                    style={{
-                      height: "40px",
-                      textAlign: "start",
-                      overflow: "hidden",
-                      fontFamily: "NanumGaRamYeonGgoc",
-                      fontSize: "1.3em",
-                    }}
-                  >
-                    {product.description.length > 50
-                      ? product.description.slice(0, 50) + "..."
-                      : product.description}
-                  </Card.Text>
-                </Card.Body>
-              </CardForm>
-            </Link>
-          </Col>
-        ))
-      )}
-    </RowForm>
+                    <Card.Text
+                      style={{
+                        height: "40px",
+                        textAlign: "start",
+                        overflow: "hidden",
+                        fontFamily: "NanumGaRamYeonGgoc",
+                        fontSize: "1.3em",
+                      }}
+                    >
+                      {product.description.length > 50
+                        ? product.description.slice(0, 50) + "..."
+                        : product.description}
+                    </Card.Text>
+                  </Card.Body>
+                </CardForm>
+              </Link>
+            </Col>
+          ))
+        )}
+      </RowForm>
+      <div
+        style={{
+          marginTop: "100px",
+          display: "flex",
+          justifyContent: "space-around",
+        }}
+      >
+        <span style={{ fontSize: "20px" }}>합계: {sum}원</span>
+        <Button>구매하기</Button>
+      </div>
+    </div>
   );
 }
 
