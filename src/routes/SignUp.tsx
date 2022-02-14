@@ -85,6 +85,7 @@ function SignUp() {
       email,
       phoneNumber,
       isAdmin: false,
+      cart: "",
     };
 
     // request createMember to MemberService.

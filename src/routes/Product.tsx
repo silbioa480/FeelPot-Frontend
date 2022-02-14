@@ -4,7 +4,7 @@ import IProduct from "../interface/IProduct";
 import { BsCartPlus } from "react-icons/bs";
 import styled from "styled-components";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { cartAtom, isLoginAtom } from "../atoms";
+import { isLoginAtom, loggedMemberAtom } from "../atoms";
 import Swal from "sweetalert2";
 
 interface IState {
@@ -22,13 +22,13 @@ const CartPlus = styled(BsCartPlus)`
 `;
 
 function Product() {
-  const {state} = useLocation<IState>();
+  const { state } = useLocation<IState>();
   const product = state?.product;
 
   const history = useHistory();
 
   const isLogin = useRecoilValue(isLoginAtom);
-  const [cart, setCart] = useRecoilState(cartAtom);
+  const [loggedMember, setLoggedMember] = useRecoilState(loggedMemberAtom);
 
   const handleCartPlus = async () => {
     if (!isLogin) {
@@ -37,11 +37,11 @@ function Product() {
         title: "로그인이 필요합니다.",
       });
 
-      history.push("/login")
+      history.push("/login");
     } else {
-      setCart({
-        owner: cart.owner,
-        productIds: cart.productIds + product.id + ",",
+      setLoggedMember({
+        ...loggedMember,
+        cart: loggedMember.cart + product?.id + "#",
       });
 
       await Swal.fire({
@@ -54,7 +54,7 @@ function Product() {
   return (
     <>
       {product ? (
-        <Figure style={{textAlign: "center"}}>
+        <Figure style={{ textAlign: "center" }}>
           <Figure.Image
             width={"95%"}
             height={"auto"}
@@ -82,7 +82,7 @@ function Product() {
               textAlign: "end",
             }}
           >
-            <CartPlus onClick={handleCartPlus}/>
+            <CartPlus onClick={handleCartPlus} />
           </Figure.Caption>
           <Figure.Caption
             style={{

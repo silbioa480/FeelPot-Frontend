@@ -8,6 +8,7 @@ interface IMember {
   email: string;
   phoneNumber: string;
   isAdmin: boolean;
+  cart: string;
 }
 
 export default IMember;

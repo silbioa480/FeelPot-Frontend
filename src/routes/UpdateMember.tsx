@@ -57,6 +57,7 @@ function UpdateMember() {
       email,
       phoneNumber,
       isAdmin: false,
+      cart: loggedMember.cart,
     };
 
     setLoggedMember(

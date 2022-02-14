@@ -30,6 +30,7 @@ function LoggedInNav() {
               email: "",
               phoneNumber: "",
               isAdmin: false,
+              cart: "",
             });
           }}
           to="/1"
