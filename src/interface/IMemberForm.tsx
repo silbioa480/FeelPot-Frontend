@@ -3,7 +3,7 @@ interface IMemberForm {
   password: string;
   passwordConfirm: string;
   name: string;
-  birth: Date;
+  birth: string;
   gender: string;
   address: string;
   email: string;

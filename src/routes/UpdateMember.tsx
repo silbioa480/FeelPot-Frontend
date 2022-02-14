@@ -28,9 +28,11 @@ function UpdateMember() {
   const [loggedMember, setLoggedMember] = useRecoilState(loggedMemberAtom);
   const history = useHistory();
 
+  const date = new Date(loggedMember.birth).toISOString().slice(0, 10);
+
   useEffect(() => {
     setValue("name", loggedMember.name);
-    setValue("birth", new Date(loggedMember.birth));
+    setValue("birth", date);
     setValue("gender", loggedMember.isMale ? "male" : "false");
     setValue("address", loggedMember.address);
     setValue("email", loggedMember.email);
@@ -49,7 +51,7 @@ function UpdateMember() {
       id: loggedMember.id,
       password: loggedMember.password,
       name,
-      birth,
+      birth: new Date(birth),
       isMale: gender === "male",
       address,
       email,

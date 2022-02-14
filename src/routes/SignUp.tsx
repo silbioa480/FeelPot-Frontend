@@ -79,7 +79,7 @@ function SignUp() {
       id,
       password: hash,
       name,
-      birth,
+      birth: new Date(birth),
       isMale,
       address,
       email,

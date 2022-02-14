@@ -9,9 +9,9 @@ function MemberInfo() {
   const birthStr =
     birth.getFullYear() +
     "년 " +
-    birth.getMonth() +
+    (birth.getMonth() + 1) +
     "월 " +
-    birth.getDay() +
+    birth.getDate() +
     "일";
 
   return (
