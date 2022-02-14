@@ -36,13 +36,13 @@ function MemberInfo() {
         </tr>
 
         <tr>
-          <td style={{ width: "30%" }}>주소</td>
-          <td>{loggedMember.address}</td>
+          <td style={{ width: "30%" }}>생년월일</td>
+          <td>{birthStr}</td>
         </tr>
 
         <tr>
-          <td style={{ width: "30%" }}>생년월일</td>
-          <td>{birthStr}</td>
+          <td style={{ width: "30%" }}>주소</td>
+          <td>{loggedMember.address}</td>
         </tr>
 
         <tr>
