@@ -1,7 +1,8 @@
 import axios, { AxiosResponse } from "axios";
 import IProduct from "../interface/IProduct";
 
-const PRODUCT_API_BASE_URL = "http://localhost:8080/api/products";
+const PRODUCT_API_BASE_URL =
+  "https://feel-pot-backend.herokuapp.com/api/products";
 
 class ProductService {
   getProducts(): Promise<AxiosResponse<IProduct[]>> {

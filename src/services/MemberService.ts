@@ -1,7 +1,8 @@
 import axios, { AxiosResponse } from "axios";
 import IMember from "../interface/IMember";
 
-const MEMBER_API_BASE_URL = "http://localhost:8080/api/members";
+const MEMBER_API_BASE_URL =
+  "https://feel-pot-backend.herokuapp.com/api/members";
 
 class MemberService {
   getMembers() {

@@ -1,5 +1,5 @@
 export function fetchProduct() {
-  return fetch("http://localhost:8080/api/products").then((response) =>
-    response.json()
+  return fetch("https://feel-pot-backend.herokuapp.com/api/products").then(
+    (response) => response.json()
   );
 }
