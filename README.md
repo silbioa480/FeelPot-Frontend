@@ -4,7 +4,7 @@ This Repository is Frontend repository of Feel Pot.
 
 Backend: https://github.com/silbioa480/FeelPot-Backend
 
-vercel: https://feel-pot-frontend.vercel.app/
+vercel: https://feel-pot-frontend.vercel.app/1
 
 + Frontend stacks:
     + React
