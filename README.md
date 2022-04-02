@@ -92,7 +92,7 @@ Because of, this site use free cost server, It need times to restart the sever a
 
 ![product_addCart](https://user-images.githubusercontent.com/75172264/161390485-82c6556d-6269-49de-b62e-013824cc0a4c.PNG)
 
-- 로그인 상태일 시, 해당 상품이 장바구니에 추가되며 장바구니 페이지에서 된 상품 내역을 확인 할 수 있습니다.
+- 로그인 상태일 시, 해당 상품이 장바구니에 추가되며 장바구니 페이지에서 추가된 상품 내역을 확인 할 수 있습니다.
 
 ### <center>Sign Up</center>
 
