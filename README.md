@@ -77,14 +77,14 @@ Because of, this site use free cost server, It need times to restart the sever a
 ![main_03](https://user-images.githubusercontent.com/75172264/161390066-8a22537b-ddda-49c4-8f4c-f52a60822d31.PNG)
 ![main_04](https://user-images.githubusercontent.com/75172264/161390068-a6141c98-bbba-4655-a915-987438ce1640.PNG)
 
-- 메인페이지 하단에는 페이지 버튼이 있으며, 각 버튼을 클릭하면 해당 숫자의 페이지로 이동하며 보여지는 상품들이 변경됩니다.
+- 메인페이지 하단에는 페이지 버튼이 있으며 각 버튼을 클릭하면 해당 숫자의 페이지로 이동하며 보여지는 상품들이 변경됩니다.
 
 ### <center>Product</center>
 
 ![product](https://user-images.githubusercontent.com/75172264/161390487-51896b04-6bda-4d8e-99a9-29a3f8c951c5.PNG)
 
 - 상품 개별 페이지에서는 해당 상품의 이미지, 이름, 가격, 설명 등을 확인할 수 있습니다.
-- 우측의 장바구니 버튼을 클릭하여, 해당 상품을 장바구니에 추가할 수 있습니다.
+- 우측의 장바구니 버튼을 클릭하여 해당 상품을 장바구니에 추가할 수 있습니다.
 
 ![product_need_login](https://user-images.githubusercontent.com/75172264/161390558-ed1af49d-edcf-4b51-b314-20df55bd4291.PNG)
 
@@ -103,11 +103,11 @@ Because of, this site use free cost server, It need times to restart the sever a
 
 ![signup_error](https://user-images.githubusercontent.com/75172264/161390377-fb5ced08-e26a-429b-ba39-579189e139e8.PNG)
 
-- 필요한 정보를 입력하지 않거나, 형식에 맞지 않게 입력한 경우 에러가 발생하여 회원 가입이 되지 않습니다.
+- 필요한 정보를 입력하지 않거나 형식에 맞지 않게 입력한 경우, 에러가 발생하며 회원 가입이 되지 않습니다.
 
 ![signup_success](https://user-images.githubusercontent.com/75172264/161390382-392c9e7f-56b4-4deb-ac60-946041a81f2a.PNG)
 
-- 필요한 정보를 모두 입력하고, 올바른 형식으로 입력되었다면, 정상적으로 회원 가입이 되며, 로그인 페이지로 이동합니다.
+- 필요한 정보를 모두 입력하고 올바른 형식으로 입력되었다면, 정상적으로 회원 가입이 되며 로그인 페이지로 이동합니다.
 
 ### <center>Log In</center>
 
@@ -118,7 +118,7 @@ Because of, this site use free cost server, It need times to restart the sever a
 ![login_error](https://user-images.githubusercontent.com/75172264/161390566-97197bf0-74b7-4ce0-a6e2-61d246e97547.PNG)
 
 - 등록되지 않은 아이디 또는 잘못된 비밀번호를 입력하면 에러가 발생하며, 로그인 할 수 없습니다.
-- 등록된 아이디의 올바른 비밀번호를 입력하면 정상적으로 로그인되며, 메인페이지로 이동합니다.
+- 등록된 아이디의 올바른 비밀번호를 입력하면, 정상적으로 로그인되며 메인페이지로 이동합니다.
 
 ### <center>My Page & Cart</center>
 
@@ -134,5 +134,5 @@ Because of, this site use free cost server, It need times to restart the sever a
 ![myPage_cart](https://user-images.githubusercontent.com/75172264/161390798-4a348d19-b258-4669-9300-fe0db496cc67.PNG)
 
 - 장바구니 탭에서는 현재 로그인 된 회원이 장바구니에 추가한 상품 내역을 보여줍니다.
-- 상품 카드 좌측에 있는 휴지통 버튼을 클릭하여, 해당 상품을 장바구니에서 뺄 수 있습니다.
+- 상품 카드 좌측에 있는 휴지통 버튼을 클릭하여 해당 상품을 장바구니에서 뺄 수 있습니다.
 - 장바구니 하단에 현재 장바구니에 포함된 모든 상품의 가격 합계를 표시합니다.
