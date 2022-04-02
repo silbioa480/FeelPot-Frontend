@@ -16,7 +16,7 @@ Backend: https://github.com/silbioa480/FeelPot-Backend
 
 This repository is Frontend project.
 If you want to see backend project, please click upper link.
-Backend project built in Spring Boot.
+Backend project is built in Spring Boot.
 ```
 
 ## 사이트 배포
