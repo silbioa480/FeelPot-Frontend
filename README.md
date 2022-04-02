@@ -49,7 +49,7 @@ Because of, this site use free cost server, It need times to restart the sever a
 
 ## 페이지 구성
 
-### <center>Navigation & Header<center>
+### <center>Navigation & Header</center>
 
 ![Navigation Header](https://user-images.githubusercontent.com/75172264/161389765-3ec71d1b-97ad-4784-86fc-8577aee09f81.PNG)
 
@@ -65,7 +65,7 @@ Because of, this site use free cost server, It need times to restart the sever a
     - 마이페이지 버튼을 클릭하면 마이페이지로 이동하며, 로그인된 회원의 정보 확인 및 수정을 할 수 있습니다.
 - 헤더에는 사진이 보이며 시간이 지나면 자동으로 사진이 변경됩니다. 또는 헤더 좌, 우측에 있는 버튼을 클릭하여 사진을 변경할 수 있습니다.
 
-### <center>Main<center>
+### <center>Main</center>
 
 ![main_01](https://user-images.githubusercontent.com/75172264/161390061-7c86bfc9-ed3c-465d-8c0b-56cdb80393b6.PNG)
 ![main_02](https://user-images.githubusercontent.com/75172264/161390065-9cced195-9126-4d3f-ad7e-1130c984d0e9.PNG)
@@ -79,7 +79,7 @@ Because of, this site use free cost server, It need times to restart the sever a
 
 - 메인페이지 하단에는 페이지 버튼이 있으며, 각 버튼을 클릭하면 해당 숫자의 페이지로 이동하며 보여지는 상품들이 변경됩니다.
 
-### <center>Product<center>
+### <center>Product</center>
 
 ![product](https://user-images.githubusercontent.com/75172264/161390487-51896b04-6bda-4d8e-99a9-29a3f8c951c5.PNG)
 
@@ -94,7 +94,7 @@ Because of, this site use free cost server, It need times to restart the sever a
 
 - 로그인 상태일 시, 해당 상품이 장바구니에 추가되며 장바구니 페이지에서 등록된 상품 내역을 확인 할 수 있습니다.
 
-### <center>Sign Up<center>
+### <center>Sign Up</center>
 
 ![signup_01](https://user-images.githubusercontent.com/75172264/161390374-1f960502-8b7d-4012-a514-fb2271aed723.PNG)
 ![signup_02](https://user-images.githubusercontent.com/75172264/161390375-31eb3052-ee4f-4c93-bce5-ed355d02368a.PNG)
@@ -109,7 +109,7 @@ Because of, this site use free cost server, It need times to restart the sever a
 
 - 필요한 정보를 모두 입력하고, 올바른 형식으로 입력되었다면, 정상적으로 회원 가입이 되며, 로그인 페이지로 이동합니다.
 
-### <center>Log In<center>
+### <center>Log In</center>
 
 ![login](https://user-images.githubusercontent.com/75172264/161390268-0cbf4566-7510-4010-8abd-768f7a3136ba.png)
 
@@ -120,7 +120,7 @@ Because of, this site use free cost server, It need times to restart the sever a
 - 등록되지 않은 아이디 또는 잘못된 비밀번호를 입력하면 에러가 발생하며, 로그인 할 수 없습니다.
 - 등록된 아이디의 올바른 비밀번호를 입력하면 정상적으로 로그인되며, 메인페이지로 이동합니다.
 
-### <center>My Page & Cart<center>
+### <center>My Page & Cart</center>
 
 ![myPage_information](https://user-images.githubusercontent.com/75172264/161390796-7c5d79ed-5988-4a66-a6b2-ec872d269035.PNG)
 
