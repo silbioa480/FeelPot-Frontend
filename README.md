@@ -133,6 +133,6 @@ Because of, this site use free cost server, It need times to restart the sever a
 
 ![myPage_cart](https://user-images.githubusercontent.com/75172264/161390798-4a348d19-b258-4669-9300-fe0db496cc67.PNG)
 
-- 장바구니 탭에서는 현재 로그인 된 회원이 장바구니에 추가한 상품을 내역을 보여줍니다.
+- 장바구니 탭에서는 현재 로그인 된 회원이 장바구니에 추가한 상품 내역을 보여줍니다.
 - 상품 카드 좌측에 있는 휴지통 버튼을 클릭하여, 해당 상품을 장바구니에서 뺄 수 있습니다.
 - 장바구니 하단에 현재 장바구니에 포함된 모든 상품의 가격 합계를 표시합니다.
