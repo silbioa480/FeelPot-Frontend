@@ -11,10 +11,13 @@ import MemberPage from "./routes/MemberPage";
 import CartPage from "./routes/CartPage";
 import MemberInfo from "./routes/MemberInfo";
 import UpdateMember from "./routes/UpdateMember";
+import ScrollToTop from "./ScrollTop";
 
 function Router() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
+
       <Navigation />
 
       <Header />
