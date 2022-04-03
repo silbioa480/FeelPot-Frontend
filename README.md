@@ -7,7 +7,7 @@
 
 ## Backend(Spring Boot)
 
-Backend: https://github.com/silbioa480/FeelPot-Backend
+- Backend: https://github.com/silbioa480/FeelPot-Backend
 
 ```
 본 레퍼지토리는 프론트엔드 프로젝트입니다.
@@ -21,7 +21,7 @@ Backend project is built in Spring Boot.
 
 ## 사이트 배포
 
-vercel: https://feel-pot-frontend.vercel.app/1
+- vercel: https://feel-pot-frontend.vercel.app/1
 
 ```
 이 사이트에 처음 접속하는 경우에는, 상품 카드가 로드될 때까지 몇 분간 기다려 주세요.
