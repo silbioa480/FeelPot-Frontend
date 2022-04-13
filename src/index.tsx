@@ -7,18 +7,25 @@ import { theme } from "./theme";
 
 import "bootstrap/dist/css/bootstrap.css";
 import { RecoilRoot } from "recoil";
+import { DevSupport } from "@react-buddy/ide-toolbox";
+import { ComponentPreviews, useInitial } from "./dev";
 
 const queryClient = new QueryClient();
 
 ReactDOM.render(
   <React.StrictMode>
-    <RecoilRoot>
-      <QueryClientProvider client={queryClient}>
-        <ThemeProvider theme={theme}>
-          <App />
-        </ThemeProvider>
-      </QueryClientProvider>
-    </RecoilRoot>
+    <DevSupport
+      ComponentPreviews={ComponentPreviews}
+      useInitialHook={useInitial}
+    >
+      <RecoilRoot>
+        <QueryClientProvider client={queryClient}>
+          <ThemeProvider theme={theme}>
+            <App />
+          </ThemeProvider>
+        </QueryClientProvider>
+      </RecoilRoot>
+    </DevSupport>
   </React.StrictMode>,
   document.getElementById("root")
 );
