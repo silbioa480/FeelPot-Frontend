@@ -7,6 +7,7 @@
 
 ## Backend(Spring Boot)
 
+<<<<<<< HEAD
 - Backend: https://github.com/silbioa480/FeelPot-Backend
 
 ```
@@ -136,3 +137,19 @@ Because of, this site use free cost server, It need times to restart the sever a
 - 장바구니 탭에서는 현재 로그인 된 회원이 장바구니에 추가한 상품 내역을 보여줍니다.
 - 상품 카드 좌측에 있는 휴지통 버튼을 클릭하여 해당 상품을 장바구니에서 뺄 수 있습니다.
 - 장바구니 하단에 현재 장바구니에 포함된 모든 상품의 가격 합계를 표시합니다.
+=======
+github-pages: https://silbioa480.github.io/FeelPot-Frontend
+
++ Frontend stacks:
+    + React
+    + Typescript
+    + Recoil
+    + styled-components
+    + react-bootstrap
+    + react-query
+    + react-router-dom
+    + react-hook-form
+    + axios
+    + SweetAlert2
+    + crypto-js
+>>>>>>> parent of 0197ec7 (modified README.md)
